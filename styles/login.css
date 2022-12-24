@@ -1,0 +1,81 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;;
+}
+body {
+    background-color: #fafafa;
+    height: 100vh;
+    margin: 0px;
+}
+.flex-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.left {
+    background-image: url(https://static.cdninstagram.com/rsrc.php/v3/y4/r/ItTndlZM2n2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 465px;
+    height: 635px;
+}
+.left img {
+    position: relative;
+    top: 28px;
+    left: 155px;
+}
+.right-1 {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid rgb(219,219,219);
+    padding: 40px;
+    margin: 10px;
+    width: 350px;
+}
+.right-1 img {
+    padding: 0px 50px 30px;
+}
+
+.log-in {
+    background-color: rgb(77, 181, 249);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+input {
+    all: unset;
+    padding: 10px;
+    border: 1px solid rgb(219,219,219);
+    margin-top: 10px;
+    background-color: rgb(250,250,250);
+}
+input:focus,
+input:active {
+    border: 1px solid rgba(38, 38, 38, 0.4);
+}
+
+.or-style {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    align-items: center;
+}
+.line {
+    background-color: rgb(219,219,219);
+    height: 1px;
+    width: 140px;
+}
+.or-text {
+    font-weight: 600;
+    color: gray;
+    padding: 0px 20px;
+}
