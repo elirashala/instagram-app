@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,24 +8,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
-    <div class="user-profile">
+    <section class="user-profile">
         <div class="user-photo"></div>
         <div class="user-info">
             <div class="username">
                 <h4>username</h4>
                 <button id="edit-profile">Edit profile</button>
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
 
             </div>
             <div class="followers">
-                <p>8 posts</p>
-                <p>676 followers</p>
-                <p>768 following</p>
+                <p> <span style="font-weight: 700;"> 8</span> posts</p>
+                <p><span style="font-weight: 700;"> 679</span> followers</p>
+                <p><span style="font-weight: 700;"> 768</span> following</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="highlights">
+        <div class="profile-highlights">
+            <div class="highlights-pic"></div>
+            <p>Highlights</p>
+        </div>
+        <div class="add-highlight">
+            <span class="material-symbols-rounded">
+                add
+            </span>
+            <p>New</p>
+        </div>
+    </section>
+
+    <div class="profile-line"></div>
+
+    <section class="user-posts">
+        <div class="posts">
+            <p id="posts"><span class="material-symbols-outlined">
+                    grid_on
+                </span>POSTS</p>
+            <div class="user-feed">
+                <div class="feed1"></div>
+                <div class="feed2"></div>
+                <div class="feed3"></div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
