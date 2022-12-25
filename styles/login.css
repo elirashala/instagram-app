@@ -186,4 +186,16 @@ footer p{
         border: none;
         max-width: 300px;
     }
+    footer div, footer p {
+        font-size: 80%;
+    }
+}
+
+@media  (max-width: 1440px) {
+    .left {
+        transform: scale(1);
+    }
+    .right {
+        transform: scale(0.9);
+    }
 }
