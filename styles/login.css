@@ -191,7 +191,7 @@ footer p{
     }
 }
 
-@media  (max-width: 1440px) {
+@media  (max-height: 900px) {
     .left {
         transform: scale(1);
     }
