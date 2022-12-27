@@ -1,10 +1,9 @@
 .nav-bar{
     background-color: white;
-    width: 16%;
+    width: 250px;
     height: 100vh;
     padding: 35px 20px;
     position: fixed;
-    top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -12,18 +11,18 @@
     border-right: 1px solid rgb(226, 226, 226);
 }
 
-.ig-logo{
+.ig-logo-text{
     padding: 12px;
+}
+
+.ig-logo{
+    display: none;
 }
 
 .nav-bar ul{
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.ig-logo img{
-    width: 65%;
 }
 
 .nav-menu{
@@ -123,3 +122,137 @@
     justify-content: flex-start;
     align-content: flex-start;
 }  */
+    
+@media only screen and (max-width: 1200px) {
+    .nav-bar{
+        background-color: white;
+        width: 75px;
+        height: 100vh;
+        padding: 20px 0px;
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1px solid rgb(226, 226, 226);
+    }
+
+    .ig-logo-text{
+        display: none;
+    }
+
+    .ig-logo{
+        display: block;
+        padding: 20px;
+    }
+
+    .nav-menu p{
+        display: none;
+    }
+
+    .nav-menu{
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-content: center;
+        align-items: center;
+    }
+
+    .nav-menu li{
+        padding: 12px;
+        background-color: white;
+        margin: 5px 0px;
+        border-radius: 100%;
+        border: 0px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .more-menu p{
+        display: none;
+    }
+
+    .more-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-content: center;
+        align-items: center;
+
+    }
+
+    .more-menu li{
+        padding: 12px;
+        background-color: white;
+        margin: 5px 0px;
+        border-radius: 100%;
+        border: 0px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .nav-bar{
+        background-color: white;
+        width: 100%;
+        height: 70px;
+        /* padding: 20px 0px; */
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border-top: 1px solid rgb(226, 226, 226);
+    }
+
+    .ig-logo-text{
+        display: none;
+    }
+
+    .ig-logo{
+        display: none;
+    }
+
+    .more-menu{
+        display: none;
+    }
+
+    .nav-menu{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    /* .nav-menu li:nth-child(1){
+        order: 1;
+    } */
+
+    /* .nav-menu li:nth-child(2){
+        order: 2;
+    } */
+
+    .nav-menu li:nth-child(3){
+        display: none;
+    }
+
+    .nav-menu li:nth-child(4){
+        order: 4;
+    }
+
+    .nav-menu li:nth-child(5){
+        order: 3;
+    }
+    .nav-menu li:nth-child(6){
+        order: 5;
+    }
+    
+}
