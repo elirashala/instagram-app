@@ -8,3 +8,11 @@
 body {
     margin: 0;
 }
+
+
+/* Instagram Feed */
+.ig-feed{
+    height: 100%;
+    margin-left: 250px;
+    background-color: black;
+}

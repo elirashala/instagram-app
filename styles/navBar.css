@@ -89,15 +89,31 @@
 
 
 
-/* .dropup{
+.dropup{
     height: auto;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgb(226, 226, 226);
-    display: none;
+
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-content: flex-start;
     position: absolute;
     bottom: 100px;
     z-index: 1;
+    animation: dropUp 300ms ease-in-out forwards;
+}
+
+@keyframes dropUp {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
 }
 
 .dropup li{
@@ -116,19 +132,13 @@
     border-bottom: none;    
 }
 
-.dropup.active{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-content: flex-start;
-}  */
     
 @media only screen and (max-width: 1200px) {
     .nav-bar{
         background-color: white;
-        width: 75px;
+        width: 95px;
         height: 100vh;
-        padding: 20px 0px;
+        padding: 35px 20px;
         position: fixed;
         left: 0;
         display: flex;
@@ -137,13 +147,17 @@
         border-right: 1px solid rgb(226, 226, 226);
     }
 
+    .nav-logo{
+        height: 78px;
+    }
+
     .ig-logo-text{
         display: none;
     }
 
     .ig-logo{
         display: block;
-        padding: 20px;
+        padding: 12px;
     }
 
     .nav-menu p{
@@ -192,6 +206,25 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+    }
+
+    .dropup{
+        height: auto;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgb(226, 226, 226);
+    
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-content: flex-start;
+        position: absolute;
+        bottom: 100px;
+        z-index: 1;
+        animation: dropUp 300ms ease-in-out forwards;
+    }
+
+    .dropup li{
+        width: 180px;
     }
 }
 

@@ -52,16 +52,41 @@
                 <p>Create</p></li>
             <li><div class="profile"></div><p>Profile</p></li>
         </ul>
-        <ul class="more-menu">
+        <ul class="more-menu" id="more-menu">
             <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
                 <p>More</p></li>
         </ul>
-        <!-- <ul class="dropup">
+        <ul class="dropup" id="dropup-items">
             <li>Log Out</li>
             <li>Switch Account</li>
-        </ul> -->
+        </ul>
     </nav>
 
+    <!-- Instagram Feed -->
+    <main class="ig-feed">
+
+    </main>
 
 </body>
 </html>
+
+<script>
+    const dropUp = document.getElementById('more-menu');
+    const dropUpItems = document.getElementById('dropup-items');
+
+    dropUpItems.style.display = 'none';
+
+    dropUp.addEventListener('click', (event) => {
+        if (dropUpItems.style.display == 'none'){
+            dropUpItems.style.display = 'flex';
+        }else{
+            dropUpItems.style.display = 'none';
+        }
+    })
+
+    // window.onclick = function(event){
+    //     if(event.target == dropUpItems){
+    //         dropUpItems.style.display = 'none';
+    //     }
+    // }
+</script>
