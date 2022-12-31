@@ -22,9 +22,9 @@
             <div>
                 <div class="right-1">
                     <img src="photos/transparentIGlogo.png" alt="logo">
-                    <input type="text" placeholder="Phone number, username, or email">
-                    <input type="password" placeholder="Password">
-                    <div class="log-in">Log In</div>
+                    <input type="text" id="loginEmail" placeholder="Phone number, username, or email">
+                    <input type="password" id="loginPassword" onfocus="checkLength()" placeholder="Password">
+                    <button class="log-in" id="loginBtn" onclick="location.href = 'index.html';">Log In</button>
                     <div class="or-style">
                         <div class="line"></div>
                         <div class="or-text">OR</div>
