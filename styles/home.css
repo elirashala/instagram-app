@@ -11,8 +11,191 @@ body {
 
 
 /* Instagram Feed */
-.ig-feed{
+.home-ig{
     height: 100%;
     margin-left: 250px;
-    background-color: black;
+    background-color: rgb(250, 250, 250);
+    display: grid;
+    grid-template-columns: 505px 355px;
+    justify-content: center;
+    justify-items: center;
+    gap: 25px;
 }
+
+.ig-feed{
+    width: 100%;
+    padding: 45px 5px;
+}
+
+.stories-content{
+    position: relative;
+    background-color: white;
+    border:1px solid rgb(226, 226, 226);
+    width: 100%;
+    height: 125px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    padding: 15px 0px;
+}
+
+.move-left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.move-right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 100%;
+    display: contents;
+}
+
+.ig-right-side{
+    width: 100%;
+    padding: 45px 5px;
+}
+
+.account-content{
+    width: 100%;
+    height: 125px;
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: row;
+}
+
+.profile-pic{
+    width: 65px;
+    height: 65px;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+
+.username-switchacc{
+    display: flex;
+    width: 75%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+.username-switchacc p:nth-child(1){
+    font-weight: 500;
+}
+
+.username-switchacc p:nth-child(2){
+    font-weight: 500;
+    color: rgb(29, 161, 242)
+}
+
+.ig-contact p{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.ig-contact p a:link{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+.ig-contact p a:visited{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+.ig-contact p a:hover{
+    text-decoration:underline;
+}
+
+@media only screen and (max-width: 1200px) {
+    .home-ig{
+        height: 100%;
+        margin-left: 95px;
+        background-color: rgb(250, 250, 250);
+        display: grid;
+        grid-template-columns: 505px 355px;
+        justify-content: center;
+        justify-items: center;
+        gap: 25px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .home-ig{
+        height: 100%;
+        margin-left: 95px;
+        background-color: rgb(250, 250, 250);
+        display: grid;
+        grid-template-columns: 505px;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .ig-right-side{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .home-ig{
+        height: 100%;
+        margin-left: 0px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: center;
+        justify-items: center;
+    }
+    
+    .ig-feed{
+        width: 100%;
+        padding: 45px 0px;
+    }
+
+    .stories-content{
+        position: relative;
+        background-color: white;
+        border: none;
+        border-bottom:1px solid rgb(226, 226, 226);
+        width: 100%;
+        height: 125px;
+        margin-bottom: 20px;
+        border-radius: 0px;
+        padding: 15px 0px;
+    }
+
+    .ig-right-side{
+        display: none;
+    }
+
+    .move-left{
+        display: none;
+    }
+
+    .move-right{
+        display: none;
+    }
+}
+
+/* background-color: rgb(250, 250, 250); */
