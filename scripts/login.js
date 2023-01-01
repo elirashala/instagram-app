@@ -1,18 +1,13 @@
-const email = document.getElementById("loginEmail").value
-const loginBtn = document.getElementById("loginBtn")
+var passwordInput = document.getElementById('loginPassword');
+var showPasswordButton = document.getElementById('showBtn');
 
-console.log(email)
-
-console.log(password)
-
-function checkLength() {
-    var email = document.getElementById("loginEmail").value;
-    var password = document.getElementById("loginPassword").value;
-    if (password.length >= 6) {
-        return true;
+showPasswordButton.addEventListener('click', function (event) {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        showPasswordButton.innerHTML = "Hide"
     } else {
-        return false;
+        passwordInput.type = 'password';
+        showPasswordButton.innerHTML = "Show"
     }
-}
+});
 
-checkLength()
