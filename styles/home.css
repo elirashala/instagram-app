@@ -1,4 +1,5 @@
 @import "/styles/navBar.css";
+@import "/styles/search.css";
 
 * {
     box-sizing: border-box;
@@ -198,4 +199,3 @@ body {
     }
 }
 
-/* background-color: rgb(250, 250, 250); */

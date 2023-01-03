@@ -11,15 +11,43 @@
     border-right: 1px solid rgb(226, 226, 226);
 }
 
-.ig-logo-text{
-    padding: 12px;
+.nav-logo{
+    height: 11%;
+    padding: 12px !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
 }
+
+/* .ig-logo-text{
+    transition: 1s;
+    animation: changeLogo 500ms; 
+} */
+
+/* @keyframes changeLogo {
+    0% {opacity: 0%; width: 0%;}
+    100% {opacity: 100%; width: 100%;}
+} */
 
 .ig-logo{
     display: none;
+    /* width: 25%;
+    position: absolute;
+    left: 0;
+    display: block;
+    padding: 12px;
+    transition: 1;
+    animation: hideLogo 200ms ease 200ms forwards ; */
 }
 
+/* @keyframes hideLogo {
+    0% {opacity: 100%;}
+    100% {opacity: 0%;}
+} */
+
 .nav-bar ul{
+    position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -87,14 +115,11 @@
     background-color: rgb(250, 250, 250);
 }
 
-
-
 .dropup{
     height: auto;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgb(226, 226, 226);
-
     flex-direction: column-reverse;
     justify-content: flex-start;
     align-content: flex-start;
@@ -147,17 +172,32 @@
         border-right: 1px solid rgb(226, 226, 226);
     }
 
-    .nav-logo{
-        height: 78px;
+    .ig-logo-text{
+        /* display: none; */
+        animation: hideLogo1 200ms ease 200ms forwards ;
     }
 
-    .ig-logo-text{
-        display: none;
+    @keyframes hideLogo1 {
+        0% {opacity: 100%;}
+        100% {opacity: 0%;}
     }
 
     .ig-logo{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
         display: block;
         padding: 12px;
+        transition: 1s;
+        animation: changeLogo1 500ms ;
+    }
+
+    @keyframes changeLogo1 {
+        0% {opacity: 0%; width: 0%;}
+        100% {opacity: 100%; width: 100%;}
     }
 
     .nav-menu p{
@@ -243,6 +283,10 @@
         align-content: center;
         justify-content: center;
         border-top: 1px solid rgb(226, 226, 226);
+    }
+
+    .nav-logo{
+        display: none;
     }
 
     .ig-logo-text{

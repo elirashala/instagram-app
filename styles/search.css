@@ -1,0 +1,26 @@
+/* .search{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    gap: 0;
+    transition: 0.7s;
+    z-index: 10;
+    margin: 0;
+
+    padding: 12px;
+}
+
+.search.active{
+    left: 95px;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    gap: 0;
+    transition: 0.7s;
+    z-index: 10;
+    margin: 0;
+} */
