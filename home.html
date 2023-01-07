@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/home.css">
+    <script src="https://kit.fontawesome.com/d9487a61f8.js" crossorigin="anonymous"></script>
     <title>Instagram</title>
 </head>
 
@@ -74,7 +75,7 @@
                 </svg>
                 <p class="menu">Notifications</p>
             </li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+            <li id="createPostBtn"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
                     style="fill: rgba(0, 0, 0, 1);transform: msFilter">
                     <path
                         d="M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm2-10h4V7h2v4h4v2h-4v4h-2v-4H7v-2z">
@@ -101,6 +102,18 @@
         </ul>
     </nav>
 
+    <!-- Create post modal -->
+    <div class="create-post">
+        <span class="close fa-solid fa-xmark fa-2xl"></span>
+        <div class="modal-content">
+            <div class="modal-container">
+                <div class="sub-container">
+                    <p>Drag photos and videos here</p>
+                    <button class="select-photo" type="button">Select from computer</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Instagram Feed -->
     <main class="home-ig">
         <div class="ig-feed">
@@ -182,6 +195,15 @@
     //         dropUpItems.style.display = 'none';
     //     }
     // }
+
+    // modal
+    const createPost = document.getElementById('createPostBtn');
+    const createPostModal = document.querySelector('.create-post');
+    console.log(createPost)
+    createPost.addEventListener('click', () => {
+            createPostModal.style.display = "flex";
+    })
+
 
     const searchButton = document.querySelector('#search-button');
     const searchBar = document.querySelector('.search');

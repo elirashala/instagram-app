@@ -1,5 +1,6 @@
 @import "/styles/navBar.css";
 @import "/styles/search.css";
+@import "/styles/post-modal.css";
 
 * {
     box-sizing: border-box;
@@ -168,7 +169,7 @@ body {
         justify-content: center;
         justify-items: center;
     }
-    
+
     .ig-feed{
         width: 100%;
         padding: 45px 0px;
@@ -198,4 +199,3 @@ body {
         display: none;
     }
 }
-
