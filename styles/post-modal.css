@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
 }
-.close {
+.closeBtn {
     position: absolute;
     top: 0;
     right: 0;
@@ -22,11 +22,11 @@
 .modal-content {
     background: white;
     margin: auto;
-    padding: 30px;
     width: 50%;
     height: 50%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border-radius: 15px;
 }
@@ -43,4 +43,20 @@
 }
 .select-photo:hover {
     background-color: rgb(24,119,242);
+}
+.sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60%;
+}
+.sub-container p {
+    font-size: 20px;
+}
+.post-header {
+    border-bottom: 1px solid rgba(0, 0, 0,0.2);
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
 }
