@@ -2,6 +2,17 @@
 @import "/styles/search.css";
 @import "/styles/post-modal.css";
 
+:root {
+    --ig-primary-button:0, 149, 246;
+    --ig-primary-button-hover: 24, 119, 242;
+    --ig-secondary-background: 250, 250, 250;
+    --ig-link: 0, 55, 107;
+    --ig-elevated-separator: 219, 219, 219;
+    --ig-tertiary-text: 199, 199, 199;
+    --fds-black-alpha-20: rgba(0, 0, 0, 0.2);
+    --fds-black-alpha-50: rgba(0, 0, 0, 0.5);
+}
+
 * {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;;
@@ -16,7 +27,7 @@ body {
 .home-ig{
     height: 100%;
     margin-left: 250px;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(var(--ig-secondary-background));
     display: grid;
     grid-template-columns: 505px 355px;
     justify-content: center;
@@ -32,7 +43,7 @@ body {
 .stories-content{
     position: relative;
     background-color: white;
-    border:1px solid rgb(226, 226, 226);
+    border:1px solid rgb(var(--ig-elevated-separator));
     width: 100%;
     height: 125px;
     margin-bottom: 20px;
@@ -106,24 +117,34 @@ body {
 }
 
 .username-switchacc p:nth-child(2){
+    cursor: pointer;
     font-weight: 500;
-    color: rgb(29, 161, 242)
+    color: rgb(var(--ig-primary-button))
+}
+.username-switchacc p:nth-child(2):hover {
+    color: rgb(var(--ig-link))
+}
+.username-switchacc p:nth-child(2):active {
+    opacity: .7;
 }
 
 .ig-contact p{
-    color: rgb(200, 200, 200);
+    color: rgb(var(--ig-tertiary-text));
     text-decoration: none;
     font-size: 13px;
 }
 
 .ig-contact p a:link{
-    color: rgb(200, 200, 200);
+    color: rgb(var(--ig-tertiary-text));
     text-decoration: none;
 }
 
 .ig-contact p a:visited{
-    color: rgb(200, 200, 200);
+    color: rgb(var(--ig-tertiary-text));
     text-decoration: none;
+}
+.ig-contact p a:active {
+    opacity: .5;
 }
 
 .ig-contact p a:hover{
@@ -134,7 +155,7 @@ body {
     .home-ig{
         height: 100%;
         margin-left: 95px;
-        background-color: rgb(250, 250, 250);
+        background-color: rgb(var(--ig-secondary-background));
         display: grid;
         grid-template-columns: 505px 355px;
         justify-content: center;
@@ -147,7 +168,7 @@ body {
     .home-ig{
         height: 100%;
         margin-left: 95px;
-        background-color: rgb(250, 250, 250);
+        background-color: rgb(var(--ig-secondary-background));
         display: grid;
         grid-template-columns: 505px;
         justify-content: center;
@@ -179,7 +200,7 @@ body {
         position: relative;
         background-color: white;
         border: none;
-        border-bottom:1px solid rgb(226, 226, 226);
+        border-bottom:1px solid rgb(var(--ig-elevated-separator));
         width: 100%;
         height: 125px;
         margin-bottom: 20px;
