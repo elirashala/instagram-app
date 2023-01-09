@@ -1,5 +1,6 @@
 @import "/styles/navBar.css";
 @import "/styles/search.css";
+@import "/styles/notification.css";
 @import "/styles/post-modal.css";
 
 :root {
@@ -33,6 +34,7 @@ body {
     justify-content: center;
     justify-items: center;
     gap: 25px;
+    transition: 0.7s;
 }
 
 .ig-feed{
@@ -157,19 +159,6 @@ body {
         margin-left: 95px;
         background-color: rgb(var(--ig-secondary-background));
         display: grid;
-        grid-template-columns: 505px 355px;
-        justify-content: center;
-        justify-items: center;
-        gap: 25px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .home-ig{
-        height: 100%;
-        margin-left: 95px;
-        background-color: rgb(var(--ig-secondary-background));
-        display: grid;
         grid-template-columns: 505px;
         justify-content: center;
         justify-items: center;
@@ -180,7 +169,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 426px) {
+@media only screen and (max-width: 600px) {
     .home-ig{
         height: 100%;
         margin-left: 0px;

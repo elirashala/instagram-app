@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid rgb(var(--ig-elevated-separator));
-    z-index: 2;
+    z-index: 3;
 	transition: 0.7s;
     box-shadow: 0px 0px 5px rgb(var(--ig-elevated-separator));
 }
@@ -34,38 +34,25 @@
     padding: 12px !important;
     display: flex;
     align-items: center;
-    justify-content: center;
-    align-content: center;
+    /* justify-content: flex-start; */
+    /* align-content: center; */
 }
 
-/* .ig-logo-text{
-    transition: 1s;
-    animation: changeLogo 500ms;
-} */
-
-/* @keyframes changeLogo {
-    0% {opacity: 0%; width: 0%;}
-    100% {opacity: 100%; width: 100%;}
-} */
-
-.ig-logo{
-    display: none;
-    /* width: 25%;
-    position: absolute;
+.insta-logo2{
     left: 0;
-    display: block;
-    padding: 12px;
-    transition: 1;
-    animation: hideLogo 200ms ease 200ms forwards ; */
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    transition: 1s;
+    animation: changeLogo1 500ms ;
 }
 
-/* @keyframes hideLogo {
-    0% {opacity: 100%;}
-    100% {opacity: 0%;}
-} */
+@keyframes changeLogo1 {
+    0% {opacity: 0%; bottom: 0; width: 0%;}
+    100% {opacity: 100%; top: 0; width: 100%;}
+} 
 
 .nav-bar ul{
-    /* position: relative; */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -193,34 +180,6 @@
         border-right: 1px solid rgb(var(--ig-elevated-separator));
     }
 
-    .ig-logo-text{
-        /* display: none; */
-        animation: hideLogo1 200ms ease 200ms forwards ;
-    }
-
-    @keyframes hideLogo1 {
-        0% {opacity: 100%;}
-        100% {opacity: 0%;}
-    }
-
-    .ig-logo{
-        width: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        padding: 12px;
-        transition: 1s;
-        animation: changeLogo1 500ms ;
-    }
-
-    @keyframes changeLogo1 {
-        0% {opacity: 0%; width: 0%;}
-        100% {opacity: 100%; width: 100%;}
-    }
-
     .nav-menu p{
         display: none;
     }
@@ -289,7 +248,7 @@
     }
 }
 
-@media only screen and (max-width: 426px) {
+@media only screen and (max-width: 600px) {
     .nav-bar{
         background-color: white;
         width: 100%;
@@ -307,10 +266,6 @@
     }
 
     .nav-logo{
-        display: none;
-    }
-
-    .ig-logo-text{
         display: none;
     }
 
