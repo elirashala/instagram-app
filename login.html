@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Instagram</title>
+    <script src="scripts/login.js" defer></script>
+</head>
+
+<body>
+    <div class="flex-2">
+        <div class="left">
+            <img src="photos/phonePhoto2.png" alt="phonePhoto2">
+            <img src="photos/phonePhoto3.png" alt="phonePhoto3">
+            <img src="photos/phonePhoto4.png" alt="phonePhoto4">
+            <img src="photos/phonePhoto1.png" alt="phonePhoto1">
+        </div>
+        <div class="right">
+            <div>
+                <div class="right-1">
+                    <img src="photos/transparentIGlogo.png" alt="logo">
+                    <div class="divInp">
+                        <input type="text" id="loginEmail" placeholder="Phone number, username, or email">
+                    </div>
+                    <div class="divInp">
+                        <input type="password" id="loginPassword" onfocus="checkLength()" placeholder="Password">
+                        <span>
+                            <button id="showBtn" type="button">Show</button>
+                        </span>
+                    </div>
+                    <button class="log-in" id="loginBtn" onclick="location.href = 'index.html';">Log In</button>
+                    <div class="or-style">
+                        <div class="line"></div>
+                        <div class="or-text">OR</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="facebook" >
+                        <span class="facebook-logo1"></span>
+                        <span style="cursor:pointer;">Log in with Facebook</span>
+                    </div>
+                    <div class="forgot-pwd" style="cursor:pointer;">
+                        Forgot password?
+                    </div>
+                </div>
+            </div>
+            <div class="sign-up">
+                Don't have an account? <span style="cursor:pointer;">Sign up</span>
+            </div>
+            <p class="get-app">Get the app.</p>
+            <div class="app-stores">
+                <img src="photos/playstore.png" alt="google play" height="40px" style="cursor:pointer;">
+                <img src="photos/microsoftstore.png" alt="microsoft" height="40px" style="cursor:pointer;">
+            </div>
+        </div>
+    </div>
+    <footer style="height: 10%; margin-top: -50px">
+        <div class="navbar">
+            <span> Meta </span>
+            <span> About </span>
+            <span> Blog </span>
+            <span> Jobs </span>
+            <span> Help </span>
+            <span> API </span>
+            <span> Privacy </span>
+            <span> Terms </span>
+            <span> Top Accounts </span>
+            <span> Locations </span>
+            <span> Instagram Lite </span>
+            <span> Contact Uploading & Non-Users</span>
+        </div>
+        <p>© 2022 Instagram from Meta</p>
+    </footer>
+
+</body>
+
+</html>
