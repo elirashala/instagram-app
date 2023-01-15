@@ -152,9 +152,7 @@
     left: 140px;
 }
 
-.feed1,
-.feed2,
-.feed3 {
+.feed {
     width: 300px;
     height: 300px;
     margin-top: 50px;
