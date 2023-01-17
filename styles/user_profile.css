@@ -1,7 +1,7 @@
-@import url(/styles/navBar.css);
-@import url(/styles/notification.css);
-@import url(/styles/post-modal.css);
-@import url(/styles/search.css);
+@import "navBar.css";
+@import "post-modal.css";
+@import "notification.css";
+@import "search.css";
 
 .user-profile {
     display: flex;
