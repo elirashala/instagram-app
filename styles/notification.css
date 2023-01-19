@@ -8,7 +8,7 @@
     z-index: 1;
     margin: 0;
     padding: 12px 0px;
-    transition: 0.7s;
+    transition: 0.5s;
     background-color: white;
     /* border-radius: 0 20px 20px 0; */
 }
@@ -20,7 +20,7 @@
     position: fixed;
     left: 97px;
     top: 0;
-    transition: 0.7s;
+    transition: 0.5s;
     z-index: 2;
     margin: 0;
     border-radius: 0 20px 20px 0;

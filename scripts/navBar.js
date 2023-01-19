@@ -1,42 +1,5 @@
-
-    // More Options
-    const dropUp = document.getElementById('more-menu');
-    const dropUpItems = document.getElementById('dropup-items');
-
-    dropUpItems.style.display = 'none';
-
-    dropUp.addEventListener('click', (event) => {
-        if (dropUpItems.style.display == 'none') {
-            dropUpItems.style.display = 'flex';
-        } else {
-            dropUpItems.style.display = 'none';
-        }
-    })
-
-    // window.onclick = function(event){
-    //     if(event.target == dropUpItems){
-    //         dropUpItems.style.display = 'none';
-    //     }
-    // }
-
-    // Modal for Create Post
-    const createPostModal = document.querySelector('.create-post');
-    const createPost = document.getElementById('createPostBtn');
-    const closeBtn = document.querySelector('.closeBtn')
-
-    createPost.addEventListener('click', () => {
-            createPostModal.style.display = "flex";
-    })
-    closeBtn.addEventListener('click', () => {
-            createPostModal.style.display = "none";
-    })
-    window.onclick = function (event) {
-        if (event.target == createPostModal) {
-            createPostModal.style.display = "none";
-        }
-    }
-
-    // Change Icons
+   
+   // Change Icons
     const instaLogo1 = document.querySelector('.insta-logo1')
     const instaLogo2 = document.querySelector('.insta-logo2')
     const tabletWindow = window.matchMedia('(max-width: 1200px)');
@@ -62,6 +25,10 @@
 
     // Menu Buttons
     const menuButtons = document.querySelectorAll('.menu-button');
+
+    // Icons 
+    var icons = document.querySelectorAll(`[id^="menu-icon"]`);
+    var iconsActive = document.querySelectorAll(`[id^="menuActive"]`);
     
     // Add an event listener to each button
     menuButtons.forEach(button => {
@@ -73,8 +40,39 @@
             }else{
             // Remove the active class from all menuButtons
             menuButtons.forEach(b => b.classList.remove('active'));
+           
+            // Return to default Home Menu
+            homeIcon.style.display = "block";
+            homeIconActive.style.display = "none";   
+            homeText.style.fontWeight = "normal";
+
+            // Return to default Search Menu
+            searchIcon.style.display = "block";
+            searchIconActive.style.display = "none";   
             searchBar.classList.remove('active');
+
+            // Return to default Explore Menu
+            exploreIcon.style.display = "block";
+            exploreIconActive.style.display = "none";   
+            exploreText.style.fontWeight = "normal";
+
+            // Return to default Notification Menu
+            notificationIcon.style.display = "block";
+            notificationIconActive.style.display = "none";   
             notificationBar.classList.remove('active');
+
+            // Return to default Profile Menu
+            profileIcon.style.display = "block";
+            profileIconActive.style.display = "none";      
+            profileText.style.fontWeight = "normal";
+
+            // Return to defaulr More Menu
+            dropUpItems.style.display = 'none';
+            moreMenuIcon.style.display = "block";
+            moreIconActive.style.display = "none";
+            moreText.style.fontWeight = "normal";
+
+            // Return to default Navigation Bar
             navBar.classList.remove('transition');
             for (const element of navMenu) {
                 element.classList.remove('transition');
@@ -90,7 +88,37 @@
             console.log('active');
             }
         });
+
     });
+
+    // Zoom In, Zoom Out
+    for(let i = 0; i < menuButtons.length; i++){
+        // Zoom In While Hover
+        menuButtons[i].onmouseover = function(){
+            for (let j = 0; j < icons.length; j++) {
+                console.log("hover");
+                icons[i].style.transform = "scale(1.15)";
+            }
+            for (let k = 0; k < iconsActive.length; k++) {
+                console.log("hover");
+                iconsActive[i].style.transform = "scale(1.15)";
+            }
+        }
+
+        // Zoom Out While Leaving Hover
+        menuButtons[i].onmouseleave = function(){
+            for (let j = 0; j < icons.length; j++) {
+                console.log("hover out");
+                icons[i].style.transform = "scale(1)";
+            }
+            for (let k = 0; k < iconsActive.length; k++) {
+                console.log("hover out");
+                iconsActive[i].style.transform = "scale(1)";
+            }
+        }
+    }
+    
+
 
     // Logo Display for Tablet Media Query
     function tablet(media){
@@ -100,10 +128,25 @@
         }
     }
 
+    // Home
+    const homeButton = document.querySelector('#home-button');
+    const homeIcon = document.querySelector('.home-icon');
+    const homeIconActive = document.querySelector('.home-icon-active');
+    const homeText = document.querySelector('#home-menu');
+
+    homeButton.addEventListener('click', function(){
+            homeIcon.style.display = "none";
+            homeIconActive.style.display = "block";   
+            homeText.style.fontWeight = "bold";
+    })
+
+
     // Search
     const searchButton = document.querySelector('#search-button');
     const searchBar = document.querySelector('.search');
-    
+    const searchIcon = document.querySelector('.search-icon')
+    const searchIconActive = document.querySelector('.search-icon-active')
+
     searchButton.addEventListener('click', function(){
         // this.classList.toggle('active');
 
@@ -130,11 +173,56 @@
             element.classList.toggle('transition');
         }
 
+        if (searchIcon.style.display === "block") {
+            searchIcon.style.display = "none";
+            searchIconActive.style.display = "block";   
+        }
+        else {
+            searchIcon.style.display = "block";
+            searchIconActive.style.display = "none";
+        }
+
     })
+
+    // Clear Input Value
+    const searchIconInput = document.querySelector('.search-icon');
+    const searchInput = document.querySelector('#search-input');
+    const clearInput = document.querySelector('.clear-input');
+    
+    searchInput.addEventListener('click', () => {
+        // console.log('input is clicked');
+        if (clearInput.style.display === "none"){
+            clearInput.style.display = "block";
+            searchIconInput.style.display = "none";
+        }
+    })
+
+    clearInput.addEventListener('click', () => {
+        // console.log('clear');
+        searchInput.value = '';
+        clearInput.style.display = "none";
+        searchIconInput.style.display = "block";
+    })
+
+
+    // Explore
+    const exploreButton = document.querySelector('#explore-button');
+    const exploreIcon = document.querySelector('.explore-icon');
+    const exploreIconActive = document.querySelector('.explore-icon-active');
+    const exploreText = document.querySelector('#explore-menu');
+
+    exploreButton.addEventListener('click', function(){
+            exploreIcon.style.display = "none";
+            exploreIconActive.style.display = "block";   
+            exploreText.style.fontWeight = "bold";
+    })
+
 
     // Notification
     const notificationButton = document.querySelector('#notification-button');
     const notificationBar = document.querySelector('.notification');
+    const notificationIcon = document.querySelector('.notification-icon');
+    const notificationIconActive = document.querySelector('.notification-icon-active');
 
     notificationButton.addEventListener('click', function(){
         // this.classList.toggle('active');
@@ -161,24 +249,108 @@
         for (const element of navMenu) {
             element.classList.toggle('transition');
         }
-    })
 
-    // Clear Input Value
-    const searchIcon = document.querySelector('.search-icon');
-    const searchInput = document.querySelector('#search-input');
-    const clearInput = document.querySelector('.clear-input');
-    
-    searchInput.addEventListener('click', () => {
-        // console.log('input is clicked');
-        if (clearInput.style.display === "none"){
-            clearInput.style.display = "block";
-            searchIcon.style.display = "none";
+        if (notificationIcon.style.display === "block") {
+            notificationIcon.style.display = "none";
+            notificationIconActive.style.display = "block";   
+        }
+        else {
+            notificationIcon.style.display = "block";
+            notificationIconActive.style.display = "none";
         }
     })
 
-    clearInput.addEventListener('click', () => {
-        // console.log('clear');
-        searchInput.value = '';
-        clearInput.style.display = "none";
-        searchIcon.style.display = "block";
+
+    // Modal for Create Post
+    const createPostModal = document.querySelector('.create-post');
+    const createPost = document.getElementById('createPostBtn');
+    const closeBtn = document.querySelector('.closeBtn')
+    const createIcon = document.querySelector('.create-icon');
+    const createIconActive = document.querySelector('.create-icon-active');
+    const createText = document.querySelector('#create-menu');
+
+    createPost.addEventListener('click', () => {
+            createPostModal.style.display = "flex";
+            createIcon.style.display = "none";
+            createIconActive.style.display = "block";   
+            createText.style.fontWeight = "bold";
     })
+
+    closeBtn.addEventListener('click', () => {
+            createPostModal.style.display = "none";
+            createIcon.style.display = "block";
+            createIconActive.style.display = "none";   
+            createText.style.fontWeight = "normal";
+    })
+
+    window.onclick = function (event) {
+        if (event.target == createPostModal) {
+            createPostModal.style.display = "none";
+            createIcon.style.display = "block";
+            createIconActive.style.display = "none";   
+            createText.style.fontWeight = "normal";
+        }
+        // if(event.target == dropUpItems){
+        //     dropUpItems.style.display = 'none';
+        // }
+    }
+
+
+    // Profile
+    const profileButton = document.querySelector('#profile-button');
+    const profileIcon = document.querySelector('.profileOne');
+    const profileIconActive = document.querySelector('.profile');
+    const profileText = document.querySelector('#profile-menu');
+
+    profileButton.addEventListener('click', function(){
+            profileIcon.style.display = "none";
+            profileIconActive.style.display = "block";      
+            profileText.style.fontWeight = "bold";
+    })
+
+
+    // More Options
+    const dropUp = document.getElementById('more-menu');
+    const dropUpItems = document.getElementById('dropup-items');
+    const moreMenuIcon = document.querySelector('.more-menu-icon');
+    const moreIconActive = document.querySelector('.more-icon-active');
+    const moreText = document.querySelector('#more-menu');
+
+    dropUpItems.style.display = 'none';
+
+    dropUp.addEventListener('click', () => {
+        if (dropUpItems.style.display == 'none') {
+            dropUpItems.style.display = 'flex';
+        } else {
+            dropUpItems.style.display = 'none';
+        }
+
+
+        if (moreMenuIcon.style.display === "block") {
+            moreMenuIcon.style.display = "none";
+            moreIconActive.style.display = "block";   
+            moreText.style.fontWeight = "bold";
+        }
+        else {
+            moreMenuIcon.style.display = "block";
+            moreIconActive.style.display = "none";
+            moreText.style.fontWeight = "normal";
+        }
+         
+    })
+
+    // More Icon
+    var moreIcon = document.getElementById("more-icon"); 
+    var moreActive = document.getElementById("moreActive")
+ 
+    // Zoom In 
+    dropUp.onmouseover = function(){
+        moreIcon.style.transform = "scale(1.15)";
+        moreActive.style.transform = "scale(1.15)";
+    }
+
+    // Zoom Out
+    dropUp.onmouseleave = function(){
+        moreIcon.style.transform = "scale(1)";
+        moreActive.style.transform = "scale(1)";
+    }
