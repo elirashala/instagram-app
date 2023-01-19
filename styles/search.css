@@ -93,4 +93,8 @@
     .search.active{
         display: none;
     }
+
+    #search-button.active{
+        border: none;
+    }
 }

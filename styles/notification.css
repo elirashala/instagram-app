@@ -68,4 +68,8 @@
     .notification.active{
         display: none;
     }
+    
+    #notification-button.active{
+        border: none;
+    }
 }
