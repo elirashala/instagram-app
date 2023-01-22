@@ -10,8 +10,15 @@
     --ig-link: 0, 55, 107;
     --ig-elevated-separator: 219, 219, 219;
     --ig-tertiary-text: 199, 199, 199;
-    --fds-black-alpha-20: rgba(0, 0, 0, 0.2);
     --fds-black-alpha-50: rgba(0, 0, 0, 0.5);
+    --fds-black-alpha-20: rgba(0, 0, 0, 0.2);
+    --main-grey: #343a40;
+    --second-grey: #495057;
+    --lighter-grey: #868e96;
+    --second-light-grey: #adb5bd;
+    --white-color: #fff;
+    --grey-one: #f8f9fa;
+    --grey-two: #f1f3f5;
 }
 
 * {
@@ -22,7 +29,6 @@
 body {
     margin: 0;
 }
-
 
 /* Instagram Feed */
 .home-ig{
@@ -174,7 +180,7 @@ body {
     .home-ig{
         height: 100%;
         margin-left: 0px;
-        background-color: white;
+        background-color: var(--white-color);
         display: grid;
         grid-template-columns: 100%;
         justify-content: center;
@@ -188,7 +194,7 @@ body {
 
     .stories-content{
         position: relative;
-        background-color: white;
+        background-color: var(--white-color);
         border: none;
         border-bottom:1px solid rgb(var(--ig-elevated-separator));
         width: 100%;
