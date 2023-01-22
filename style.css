@@ -1,6 +1,5 @@
-@import "styles/login.css";
-@import "styles/user_profile.css";
-@import "styles/home.css";
+@import "/styles/login.css";
+@import "/styles/user_profile.css";
 
 :root {
     --ig-primary-button:0, 149, 246;
