@@ -55,19 +55,63 @@
 
     changeIcon(tabletWindow);
 
-    // Search
-    const searchButton = document.querySelector('#search-button');
-    const searchBar = document.querySelector('.search');
+
+    // Nav Bar Selection
     const navBar = document.querySelector('.nav-bar');
     const navMenu = document.querySelectorAll('.menu');
 
-    searchButton.addEventListener('click', () => {
-        searchButton.classList.toggle('active');
-        searchBar.classList.toggle('active');
+    // Menu Buttons
+    const menuButtons = document.querySelectorAll('.menu-button');
 
+    // Add an event listener to each button
+    menuButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // check which button is active
+            if(this.classList.contains('active')){
+                this.classList.remove('active');
 
-        // instaLogo1.style.display = "none";
-        // instaLogo2.style.display = "block";
+            }else{
+            // Remove the active class from all menuButtons
+            menuButtons.forEach(b => b.classList.remove('active'));
+            searchBar.classList.remove('active');
+            notificationBar.classList.remove('active');
+            navBar.classList.remove('transition');
+            for (const element of navMenu) {
+                element.classList.remove('transition');
+            }
+            instaLogo1.style.display = "block";
+            instaLogo2.style.display = "none";
+
+            tabletWindow.addListener(changeIcon);
+            changeIcon(tabletWindow);
+
+            // Add the active class to the clicked button
+            this.classList.add('active');
+            console.log('active');
+            }
+        });
+    });
+
+    // Logo Display for Tablet Media Query
+    function tablet(media){
+        if(media.matches){
+            instaLogo1.style.display = "none";
+            instaLogo2.style.display = "block";
+        }
+    }
+
+    // Search
+    const searchButton = document.querySelector('#search-button');
+    const searchBar = document.querySelector('.search');
+
+    searchButton.addEventListener('click', function(){
+        // this.classList.toggle('active');
+
+        if(this.classList.contains('active')){
+            searchBar.classList.toggle('active');
+        }else{
+            searchBar.classList.remove('active');
+        }
 
         if (instaLogo1.style.display === "block") {
             instaLogo1.style.display = "none";
@@ -78,12 +122,45 @@
             instaLogo2.style.display = "none";
         }
 
-        // navbar.style.cssText = 'width: 95px; transition: 0.7s;';
+        tabletWindow.addListener(tablet);
+        tablet(tabletWindow);
+
         navBar.classList.toggle('transition');
         for (const element of navMenu) {
             element.classList.toggle('transition');
         }
 
+    })
+
+    // Notification
+    const notificationButton = document.querySelector('#notification-button');
+    const notificationBar = document.querySelector('.notification');
+
+    notificationButton.addEventListener('click', function(){
+        // this.classList.toggle('active');
+
+        if(this.classList.contains('active')){
+            notificationBar.classList.toggle('active');
+        }else{
+            notificationBar.classList.remove('active');
+        }
+
+        if (instaLogo1.style.display === "block") {
+            instaLogo1.style.display = "none";
+            instaLogo2.style.display = "block";
+        }
+        else {
+            instaLogo1.style.display = "block";
+            instaLogo2.style.display = "none";
+        }
+
+        tabletWindow.addListener(tablet);
+        tablet(tabletWindow);
+
+        navBar.classList.toggle('transition');
+        for (const element of navMenu) {
+            element.classList.toggle('transition');
+        }
     })
 
     // Clear Input Value
@@ -105,40 +182,3 @@
         clearInput.style.display = "none";
         searchIcon.style.display = "block";
     })
-
-
-    // Notification
-    const notificationButton = document.querySelector('#notification-button');
-    const notificationBar = document.querySelector('.notification');
-
-    notificationButton.addEventListener('click', () => {
-        notificationButton.classList.toggle('active');
-        notificationBar.classList.toggle('active');
-
-        if (instaLogo1.style.display === "block") {
-            instaLogo1.style.display = "none";
-            instaLogo2.style.display = "block";
-        }
-        else {
-            instaLogo1.style.display = "block";
-            instaLogo2.style.display = "none";
-        }
-
-        navBar.classList.toggle('transition');
-        for (const element of navMenu) {
-            element.classList.toggle('transition');
-        }
-
-    })
-
-    // Mi rishiku perseri
-    // const menuButtons = document.querySelectorAll('.menu-button');
-
-    // menuButtons.forEach(button => {
-    //     button.addEventListener('click', function() {
-    //     menuButtons.forEach(button => {
-    //         button.classList.remove('active');
-    //     });
-    //     this.classList.add('active');
-    //     });
-    // });

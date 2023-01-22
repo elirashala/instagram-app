@@ -8,10 +8,11 @@
     width: 100%;
     padding: 0;
     position: relative;
-    bottom: 80px;
+    top: 20px;
     justify-content: center;
     gap: 100px;
     overflow: auto;
+    margin-bottom: 50px;
 }
 
 .user-photo {
@@ -32,6 +33,7 @@
 .username {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .username h4 {
@@ -161,29 +163,105 @@
     background-size: cover;
 }
 
-.ig-contact p{
+.ig-contact p {
     color: rgb(var(--ig-tertiary-text));
     text-decoration: none;
     font-size: 13px;
 }
 
-.ig-contact p a:link{
+.ig-contact p a:link {
     color: rgb(var(--ig-tertiary-text));
     text-decoration: none;
 }
 
-.ig-contact p a:visited{
+.ig-contact p a:visited {
     color: rgb(var(--ig-tertiary-text));
     text-decoration: none;
 }
+
 .ig-contact p a:active {
     opacity: .5;
 }
 
-.ig-contact p a:hover{
-    text-decoration:underline;
+.ig-contact p a:hover {
+    text-decoration: underline;
 }
 
 .ig-footer {
     padding: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+    #posts {
+        left: 145px;
+    }
+
+    #posts::before {
+        bottom: 0.5px;
+    }
+
+    .feed {
+        width: 133px;
+        height: 133px;
+    }
+
+    .user-feed {
+        left: 1px;
+        gap: 1px;
+    }
+
+    .user-photo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .user-profile {
+        gap: 0;
+        flex-direction: column-reverse;
+        left: 6px;
+        top: 0;
+        padding: 10px 0;
+    }
+
+    .ig-footer {
+        display: none;
+    }
+
+    .add-highlight span {
+        font-size: 65px;
+    }
+
+    .highlights-pic,
+    .add-highlight {
+        width: 70px;
+        height: 70px;
+
+    }
+
+    .profile-line {
+        width: 93%;
+        margin: 0 0 0 3.5%;
+    }
+
+    .highlights {
+        right: 100px;
+        gap: 18px;
+        padding: 0 0px 20px;
+        margin: 0;
+    }
+
+    .followers {
+        gap: 18px;
+        position: relative;
+        top: 42px;
+        padding-left: 110px;
+        font-size: 14px;
+    }
+
+    .username {
+        position: relative;
+        gap: 70px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {}
