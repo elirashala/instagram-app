@@ -1,7 +1,7 @@
-@import "/styles/navBar.css";
-@import "/styles/search.css";
-@import "/styles/notification.css";
-@import "/styles/post-modal.css";
+@import "navBar.css";
+@import "search.css";
+@import "notification.css";
+@import "post-modal.css";
 
 :root {
     --ig-primary-button:0, 149, 246;
