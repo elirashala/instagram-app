@@ -1,0 +1,76 @@
+.post-content h4, p{
+    margin: 0;
+} 
+
+.post{
+    position: relative;
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgb(var(--ig-elevated-separator));
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.post-user{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.post-user img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: center;
+
+}
+
+.post-user h4{
+    font-weight: 500;
+}
+
+.post-image{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: block;
+    overflow: hidden;
+
+}
+
+.post-image img{
+    width: 100%; 
+    object-fit: cover;
+}
+
+.post-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.post-lmsh{
+    padding: 10px;
+    display: flex;
+}
+
+.post-likes{
+    padding: 5px 10px;
+}
+
+.post-dc{
+    padding: 5px 10px;
+}
+
+.post-comments{
+    padding: 5px 10px 30px 10px;
+}
+
+.post-comments p{
+    color: gray;
+}
+
+

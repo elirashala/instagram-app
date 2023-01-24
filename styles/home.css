@@ -2,6 +2,7 @@
 @import "search.css";
 @import "notification.css";
 @import "post-modal.css";
+@import "home-post.css";
 
 :root {
     --ig-primary-button:0, 149, 246;
