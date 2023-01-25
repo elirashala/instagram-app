@@ -1,4 +1,10 @@
-.post-content h4, p{
+.posts-content{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.posts-content h4, p{
     margin: 0;
 } 
 
@@ -55,6 +61,8 @@
 .post-lmsh{
     padding: 10px;
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .post-likes{
@@ -73,4 +81,15 @@
     color: gray;
 }
 
+.no-like{
+    cursor: pointer;
+}
+
+.like-heart{
+    cursor: pointer;
+}
+
+.see-comments{
+    cursor: pointer;
+}
 

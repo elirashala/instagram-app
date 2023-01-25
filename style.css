@@ -10,7 +10,9 @@
     --ig-tertiary-text: 199, 199, 199;
     --fds-black-alpha-20: rgba(0, 0, 0, 0.2);
     --fds-black-alpha-50: rgba(0, 0, 0, 0.5);
+    --white-color: #fff;
 }
+
 
 * {
     margin: 0;
