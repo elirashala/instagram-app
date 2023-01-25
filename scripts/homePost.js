@@ -85,18 +85,22 @@ const showPosts = (datas) => {
             }
         }
 
-        const noLike = document.querySelector('.no-like');
-        const likeHeart = document.querySelector('.like-heart');
+        const noLike = document.querySelectorAll('.no-like');
+        const likeHeart = document.querySelectorAll('.like-heart');
 
-        noLike.addEventListener('click', () => {
-            noLike.style.display = "none";
-            likeHeart.style.display = "block";
-        })
+        for (let i = 0; i < noLike.length; i++) {
+            noLike[i].addEventListener('click', () => {
+                noLike[i].style.display = "none";
+                likeHeart[i].style.display = "block";
+            });
+        }
 
-        likeHeart.addEventListener('click', () => {
-            noLike.style.display = "block";
-            likeHeart.style.display = "none";
-        })
+        for (let i = 0; i < likeHeart.length; i++) {
+            likeHeart[i].addEventListener('click', () => {
+                noLike[i].style.display = "block";
+                likeHeart[i].style.display = "none";
+            });
+        }
 
     }
 }
