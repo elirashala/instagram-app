@@ -7,6 +7,8 @@
 @import "notification.css";
 @import "post-modal.css";
 @import "search.css";
+@import "followers-modal.css";
+@import "followings-modal.css";
 
 
 .user-profile {
@@ -168,6 +170,18 @@
     background-position: center;
     background-size: cover;
 }
+
+.btn-followers {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fafafa;
+}
+
+.btn-followers:active{
+    color: gray;
+}
+
 
 .ig-contact p {
     color: rgb(var(--ig-tertiary-text));
