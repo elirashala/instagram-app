@@ -3,6 +3,7 @@
 @import "notification.css";
 @import "post-modal.css";
 @import "home-post.css";
+@import "home-stories.css";
 
 :root {
     --ig-primary-button:0, 149, 246;
@@ -44,50 +45,13 @@ body {
     transition: 0.7s;
 }
 
+.logo-phone{
+    display: none;
+}
+
 .ig-feed{
     width: 100%;
     padding: 45px 5px;
-}
-
-.stories-content{
-    position: relative;
-    background-color: white;
-    border:1px solid rgb(var(--ig-elevated-separator));
-    width: 100%;
-    height: 125px;
-    margin-bottom: 20px;
-    border-radius: 7px;
-    padding: 15px 0px;
-}
-
-.move-left{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.move-right{
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.arrow-button{
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 100%;
-    display: contents;
 }
 
 .ig-right-side{
@@ -188,32 +152,19 @@ body {
         justify-items: center;
     }
 
-    .ig-feed{
+    .logo-phone{
+        display: block;
         width: 100%;
-        padding: 45px 0px;
+        height: 50px;
+        padding: 0px 10px;
     }
 
-    .stories-content{
-        position: relative;
-        background-color: var(--white-color);
-        border: none;
-        border-bottom:1px solid rgb(var(--ig-elevated-separator));
+    .ig-feed{
         width: 100%;
-        height: 125px;
-        margin-bottom: 20px;
-        border-radius: 0px;
-        padding: 15px 0px;
+        padding: 0px;
     }
 
     .ig-right-side{
-        display: none;
-    }
-
-    .move-left{
-        display: none;
-    }
-
-    .move-right{
         display: none;
     }
 }

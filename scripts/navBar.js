@@ -1,7 +1,11 @@
 // Change Icons
 const instaLogo1 = document.querySelector('.insta-logo1')
 const instaLogo2 = document.querySelector('.insta-logo2')
+
+
 const tabletWindow = window.matchMedia('(max-width: 1200px)');
+const phoneWindow = window.matchMedia('(max-width: 600px)');
+
 function changeIcon(mediaQueryList){
     if(mediaQueryList.matches){
         instaLogo1.style.display = "none";
@@ -11,8 +15,10 @@ function changeIcon(mediaQueryList){
         instaLogo2.style.display = "none";
     }
 }
+
 tabletWindow.addListener(changeIcon);
 changeIcon(tabletWindow);
+
 // Nav Bar Selection
 const navBar = document.querySelector('.nav-bar');
 const navMenu = document.querySelectorAll('.menu');
@@ -306,27 +312,20 @@ dropUpItems.style.display = 'none';
 dropUp.addEventListener('click', () => {
     if (dropUpItems.style.display == 'none') {
         dropUpItems.style.display = 'flex';
-    } else {
-        dropUpItems.style.display = 'none';
-    }
-
-
-    if (moreMenuIcon.style.display === "block") {
         moreMenuIcon.style.display = "none";
         moreIconActive.style.display = "block";   
         moreText.style.fontWeight = "bold";
-    }
-    else {
+    } else {
+        dropUpItems.style.display = 'none';
         moreMenuIcon.style.display = "block";
         moreIconActive.style.display = "none";
         moreText.style.fontWeight = "normal";
     }
-
-})
+});
 
 // More Icon
 var moreIcon = document.getElementById("more-icon"); 
-var moreActive = document.getElementById("moreActive")
+var moreActive = document.getElementById("moreActive");
 
 // Zoom In 
 dropUp.onmouseover = function(){
