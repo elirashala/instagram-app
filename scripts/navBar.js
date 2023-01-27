@@ -212,12 +212,19 @@ exploreButton.addEventListener('click', function(){
         exploreText.style.fontWeight = "bold";
 })
 
-
 // Notification
 const notificationButton = document.querySelector('#notification-button');
 const notificationBar = document.querySelector('.notification');
 const notificationIcon = document.querySelector('.notification-icon');
 const notificationIconActive = document.querySelector('.notification-icon-active');
+
+// 
+function notificationPage(media){
+    if(media.matches){
+        notificationBar.style.display = "none";
+        window.location.href = 'notification.html';
+    }
+}
 
 notificationButton.addEventListener('click', function(){
     // this.classList.toggle('active');
@@ -234,8 +241,18 @@ notificationButton.addEventListener('click', function(){
         instaLogo1.style.display = "block";
         instaLogo2.style.display = "none";
     }
+    
     tabletWindow.addListener(tablet);
     tablet(tabletWindow);
+
+    phoneWindow.addListener(notificationPage);
+    notificationPage(phoneWindow);
+
+    // Edhe qishtu po bojka
+    // if(phoneWindow.matches){
+    //     window.location.href = 'notification.html';
+    // }
+
     navBar.classList.toggle('transition');
     for (const element of navMenu) {
         element.classList.toggle('transition');
