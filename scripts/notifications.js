@@ -25,11 +25,11 @@ const notificationLikesComments = document.getElementById('notification-button')
 
 let notificationItemAsHtmlString =
     `<div class="notification-content">
+        <img class="notification-users-pic" src="https://source.unsplash.com/random/200x200?sig=imgId" alt="user profile pic">
         <div class="user-notifications-details-content">
-          <img class="notification-users-pic" src="https://source.unsplash.com/random/200x200?sig=imgId" alt="user profile pic">
           <p class="notification-username">resultUsername</p>
           <p class="notification-action-done">likesOrComment</p>
-          <p class="notification-time">1w</p>
+          <p class="notification-time">1d</p>
         </div>
         <img class="notification-action-pic" src="photos/userProfilePics/profilePic2.png" alt="user liked image">
     </div>`;
