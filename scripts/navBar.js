@@ -26,7 +26,7 @@ const navMenu = document.querySelectorAll('.menu');
 // Menu Buttons
 const menuButtons = document.querySelectorAll('.menu-button');
 
-// Icons 
+// Icons
 var icons = document.querySelectorAll(`[id^="menu-icon"]`);
 var iconsActive = document.querySelectorAll(`[id^="menuActive"]`);
 
@@ -36,34 +36,34 @@ menuButtons.forEach(button => {
         // check which button is active
         if(this.classList.contains('active')){
             this.classList.remove('active');
-            
+
         }else{
         // Remove the active class from all menuButtons
         menuButtons.forEach(b => b.classList.remove('active'));
 
         // Return to default Home Menu
         homeIcon.style.display = "block";
-        homeIconActive.style.display = "none";   
+        homeIconActive.style.display = "none";
         homeText.style.fontWeight = "normal";
 
         // Return to default Search Menu
         searchIcon.style.display = "block";
-        searchIconActive.style.display = "none";   
+        searchIconActive.style.display = "none";
         searchBar.classList.remove('active');
 
         // Return to default Explore Menu
         exploreIcon.style.display = "block";
-        exploreIconActive.style.display = "none";   
+        exploreIconActive.style.display = "none";
         exploreText.style.fontWeight = "normal";
 
         // Return to default Notification Menu
         notificationIcon.style.display = "block";
-        notificationIconActive.style.display = "none";   
+        notificationIconActive.style.display = "none";
         notificationBar.classList.remove('active');
 
         // Return to default Profile Menu
         profileIcon.style.display = "block";
-        profileIconActive.style.display = "none";      
+        profileIconActive.style.display = "none";
         profileText.style.fontWeight = "normal";
 
         // Return to defaulr More Menu
@@ -78,7 +78,7 @@ menuButtons.forEach(button => {
             element.classList.remove('transition');
         }
         instaLogo1.style.display = "block";
-        instaLogo2.style.display = "none";  
+        instaLogo2.style.display = "none";
         tabletWindow.addListener(changeIcon);
         changeIcon(tabletWindow);
         // Add the active class to the clicked button
@@ -122,7 +122,7 @@ for(let i = 0; i < menuButtons.length; i++){
 function tablet(media){
     if(media.matches){
         instaLogo1.style.display = "none";
-        instaLogo2.style.display = "block";  
+        instaLogo2.style.display = "block";
     }
 }
 
@@ -134,7 +134,7 @@ const homeText = document.querySelector('#home-menu');
 
 homeButton.addEventListener('click', function(){
         homeIcon.style.display = "none";
-        homeIconActive.style.display = "block";   
+        homeIconActive.style.display = "block";
         homeText.style.fontWeight = "bold";
 })
 
@@ -151,11 +151,11 @@ searchButton.addEventListener('click', function(){
     if(this.classList.contains('active')){
         searchBar.classList.toggle('active');
     }else{
-        searchBar.classList.remove('active');    
+        searchBar.classList.remove('active');
     }
     if (instaLogo1.style.display === "block") {
         instaLogo1.style.display = "none";
-        instaLogo2.style.display = "block";   
+        instaLogo2.style.display = "block";
     }
     else {
         instaLogo1.style.display = "block";
@@ -170,7 +170,7 @@ searchButton.addEventListener('click', function(){
 
     if (searchIcon.style.display === "block") {
         searchIcon.style.display = "none";
-        searchIconActive.style.display = "block";   
+        searchIconActive.style.display = "block";
     }
     else {
         searchIcon.style.display = "block";
@@ -196,7 +196,7 @@ clearInput.addEventListener('click', () => {
     // console.log('clear');
     searchInput.value = '';
     clearInput.style.display = "none";
-    searchIconInput.style.display = "block";
+    // searchIconInput.style.display = "block"; kur klikohet bon bug
 })
 
 
@@ -208,7 +208,7 @@ const exploreText = document.querySelector('#explore-menu');
 
 exploreButton.addEventListener('click', function(){
         exploreIcon.style.display = "none";
-        exploreIconActive.style.display = "block";   
+        exploreIconActive.style.display = "block";
         exploreText.style.fontWeight = "bold";
 })
 
@@ -218,7 +218,7 @@ const notificationBar = document.querySelector('.notification');
 const notificationIcon = document.querySelector('.notification-icon');
 const notificationIconActive = document.querySelector('.notification-icon-active');
 
-// 
+//
 function notificationPage(media){
     if(media.matches){
         notificationBar.style.display = "none";
@@ -231,17 +231,17 @@ notificationButton.addEventListener('click', function(){
     if(this.classList.contains('active')){
         notificationBar.classList.toggle('active');
     }else{
-        notificationBar.classList.remove('active');    
+        notificationBar.classList.remove('active');
     }
     if (instaLogo1.style.display === "block") {
         instaLogo1.style.display = "none";
-        instaLogo2.style.display = "block";   
+        instaLogo2.style.display = "block";
     }
     else {
         instaLogo1.style.display = "block";
         instaLogo2.style.display = "none";
     }
-    
+
     tabletWindow.addListener(tablet);
     tablet(tabletWindow);
 
@@ -260,7 +260,7 @@ notificationButton.addEventListener('click', function(){
 
     if (notificationIcon.style.display === "block") {
         notificationIcon.style.display = "none";
-        notificationIconActive.style.display = "block";   
+        notificationIconActive.style.display = "block";
     }
     else {
         notificationIcon.style.display = "block";
@@ -280,14 +280,14 @@ const createText = document.querySelector('#create-menu');
 createPost.addEventListener('click', () => {
         createPostModal.style.display = "flex";
         createIcon.style.display = "none";
-        createIconActive.style.display = "block";   
+        createIconActive.style.display = "block";
         createText.style.fontWeight = "bold";
 })
 
 closeBtn.addEventListener('click', () => {
         createPostModal.style.display = "none";
         createIcon.style.display = "block";
-        createIconActive.style.display = "none";   
+        createIconActive.style.display = "none";
         createText.style.fontWeight = "normal";
 })
 
@@ -295,7 +295,7 @@ window.onclick = function (event) {
     if (event.target == createPostModal) {
         createPostModal.style.display = "none";
         createIcon.style.display = "block";
-        createIconActive.style.display = "none";   
+        createIconActive.style.display = "none";
         createText.style.fontWeight = "normal";
     }
     // if(event.target == dropUpItems){
@@ -312,7 +312,7 @@ const profileText = document.querySelector('#profile-menu');
 
 profileButton.addEventListener('click', function(){
         profileIcon.style.display = "none";
-        profileIconActive.style.display = "block";      
+        profileIconActive.style.display = "block";
         profileText.style.fontWeight = "bold";
 })
 
@@ -330,7 +330,7 @@ dropUp.addEventListener('click', () => {
     if (dropUpItems.style.display == 'none') {
         dropUpItems.style.display = 'flex';
         moreMenuIcon.style.display = "none";
-        moreIconActive.style.display = "block";   
+        moreIconActive.style.display = "block";
         moreText.style.fontWeight = "bold";
     } else {
         dropUpItems.style.display = 'none';
@@ -341,10 +341,10 @@ dropUp.addEventListener('click', () => {
 });
 
 // More Icon
-var moreIcon = document.getElementById("more-icon"); 
+var moreIcon = document.getElementById("more-icon");
 var moreActive = document.getElementById("moreActive");
 
-// Zoom In 
+// Zoom In
 dropUp.onmouseover = function(){
     moreIcon.style.transform = "scale(1.15)";
     moreActive.style.transform = "scale(1.15)";
