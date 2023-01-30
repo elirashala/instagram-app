@@ -119,6 +119,7 @@
 
     .notification.active{
         display: none;
+        left: 0;
     }
 
     #notification-button.active{
