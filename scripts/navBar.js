@@ -216,12 +216,9 @@ const notificationBar = document.querySelector('.notification');
 const notificationIcon = document.querySelector('.notification-icon');
 const notificationIconActive = document.querySelector('.notification-icon-active');
 
-function notificationPage(media){
-    if(media.matches){
-        // if(notificationBar.active){
-            window.location.assign("notification.html");
-            // notificationBar.style.display = "none";
-        // }
+function notificationPage(media) {
+    if (media.matches && notificationBar.active) {
+        window.location.href = "notification.html";
     }
 }
 
@@ -242,11 +239,12 @@ notificationButtons.forEach(notificationButton => {
             instaLogo2.style.display = "none";
         }
 
+        phoneWindow.addListener(notificationPage);
+        notificationPage(phoneWindow);
+
         // tabletWindow.addListener(tablet);
         // tablet(tabletWindow);
         //
-        // phoneWindow.addListener(notificationPage);
-        // notificationPage(phoneWindow);
 
         // Edhe qishtu po bojka
         // if(phoneWindow.matches){
