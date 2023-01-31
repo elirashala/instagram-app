@@ -21,45 +21,54 @@
 
  */
 
-// const notificationLikesComments = document.getElementById('notification-button');
+// const notifBtnEls = Array.from(document.getElementsByClassName("notification-button"));
+const notifBtnEls = document.querySelectorAll(".notification-button");
+const notifLikes = document.querySelectorAll(".notification-likes-content-wrapper");
+const notifComments = document.querySelectorAll(".notification-comments-content-wrapper");
 
-let notificationItemAsHtmlString =
+const notificationTemplate = (username, action, imgId) =>
     `<div class="notification-content">
-        <img class="notification-users-pic" src="https://source.unsplash.com/random/200x200?sig=imgId" alt="user profile pic">
-        <div class="user-notifications-details-content">
-          <p class="notification-username">resultUsername</p>
-          <p class="notification-action-done">likesOrComment</p>
-          <p class="notification-time">1d</p>
-        </div>
-        <img class="notification-action-pic" src="photos/userProfilePics/profilePic2.png" alt="user liked image">
-    </div>`;
+    <img class="notification-users-pic" src="https://source.unsplash.com/random/200x200?sig=${imgId}" alt="user profile pic">
+    <div class="user-notifications-details-content">
+      <p class="notification-username">${username}</p>
+      <p class="notification-action-done">${action}</p>
+      <p class="notification-time">1d</p>
+    </div>
+    <img class="notification-action-pic" src="photos/userProfilePics/profilePic2.png" alt="user liked image">
+  </div>`;
 
-// notificationLikesComments.addEventListener('click', () => {
-    Promise.all([
-        fetch('https://api.npoint.io/584992ba9231bb13e12c'),
-        fetch('https://api.npoint.io/18f5f11b0b73872e843d')
-    ]).then(responses =>
-        Promise.all(responses.map(response => response.json()))
-    ).then(result => {
+notifBtnEls.forEach(notifBtnEl => {
+    notifBtnEl.addEventListener('click', async () => {
+        console.log("clicked");
+        try {
+            const [likesResponse, commentsResponse] = await Promise.all([
+                fetch('https://api.npoint.io/584992ba9231bb13e12c'),
+                fetch('https://api.npoint.io/18f5f11b0b73872e843d'),
+            ]);
 
-        let likesOutput = '';
-        let commentsOutput = '';
+            const [likesData, commentsData] = await Promise.all([
+                likesResponse.json(),
+                commentsResponse.json(),
+            ]);
 
-        result[0].data?.shortcode_media?.edge_liked_by?.edges?.map((edge, key) => {
-            likesOutput += notificationItemAsHtmlString.replace('resultUsername', edge.node.username);
-            likesOutput = likesOutput.replace('likesOrComment', " liked your post.");
-            likesOutput = likesOutput.replace('imgId', key.toString());
-        })
+            const likesOutput = likesData.data?.shortcode_media?.edge_liked_by?.edges?.map((edge, key) =>
+                notificationTemplate(edge.node.username, "liked your post.", key.toString())
+            ).join('');
 
-        document.getElementById('notification-likes-content-wrapper').innerHTML = likesOutput;
+            notifLikes.forEach(notifLike => {
+                notifLike.innerHTML = likesOutput;
+            })
 
-        result[1].comments?.map((comment, key) => {
-            commentsOutput += notificationItemAsHtmlString.replace("resultUsername", comment.user.username);
-            commentsOutput = commentsOutput.replace("likesOrComment", ` commented: ${comment.text}`);
-            commentsOutput = commentsOutput.replace('imgId', key.toString());
-        })
+            const commentsOutput = commentsData.comments?.map((comment, key) =>
+                notificationTemplate(comment.user.username, `commented: ${comment.text}`, key.toString())
+            ).join('');
 
-        document.getElementById('notification-comments-content-wrapper').innerHTML = commentsOutput;
+            notifComments.forEach(notifComment => {
+                notifComment.innerHTML = commentsOutput;
+            })
 
-    }).catch(err => console.error(err));
-// });
+        } catch (err) {
+            console.error(err);
+        }
+    });
+});

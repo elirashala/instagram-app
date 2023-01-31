@@ -66,7 +66,7 @@ menuButtons.forEach(button => {
         profileIconActive.style.display = "none";
         profileText.style.fontWeight = "normal";
 
-        // Return to defaulr More Menu
+        // Return to default More Menu
         dropUpItems.style.display = 'none';
         moreMenuIcon.style.display = "block";
         moreIconActive.style.display = "none";
@@ -213,67 +213,56 @@ exploreButton.addEventListener('click', function(){
 })
 
 // Notification
-const notificationButton = document.querySelector('#notification-button');
+// const notificationButton = document.querySelector('#notification-button');
+const notificationButtons = document.querySelectorAll('.notification-button');
 const notificationBar = document.querySelector('.notification');
 const notificationIcon = document.querySelector('.notification-icon');
 const notificationIconActive = document.querySelector('.notification-icon-active');
 
-//
-function notificationPage(media){
-    if(media.matches){
-        notificationBar.style.display = "none";
-        // window.location.href = 'notification.html';
-        window.location.assign("notification.html");
-        console.log("next");
+function notificationPage(media) {
+    if (media.matches && notificationBar.active) {
+        window.location.href = "notification.html";
     }
 }
 
-notificationButton.addEventListener('click', function(){
-    // this.classList.toggle('active');
-    if(this.classList.contains('active')){
-        notificationBar.classList.toggle('active');
-    }else{
-        notificationBar.classList.remove('active');
-    }
-    if (instaLogo1.style.display === "block") {
-        instaLogo1.style.display = "none";
-        instaLogo2.style.display = "block";
-    }
-    else {
-        instaLogo1.style.display = "block";
-        instaLogo2.style.display = "none";
-    }
+notificationButtons.forEach(notificationButton => {
+    notificationButton.addEventListener('click', function(){
+        // this.classList.toggle('active');
+        if(this.classList.contains('active')){
+            notificationBar.classList.toggle('active');
+        }else{
+            notificationBar.classList.remove('active');
+        }
+        if (instaLogo1.style.display === "block") {
+            instaLogo1.style.display = "none";
+            instaLogo2.style.display = "block";
+        }
+        else {
+            instaLogo1.style.display = "block";
+            instaLogo2.style.display = "none";
+        }
 
-    tabletWindow.addListener(tablet);
-    tablet(tabletWindow);
+        //phoneWindow.addListener(notificationPage);
+        notificationPage(phoneWindow);
 
-    // E aplikon fill
-    // phoneWindow.addListener(notificationPage);
+        // tabletWindow.addListener(tablet);
+        // tablet(tabletWindow);
 
-    // Aplikohet kur click
-    notificationPage(phoneWindow);
+        navBar.classList.toggle('transition');
+        for (const element of navMenu) {
+            element.classList.toggle('transition');
+        }
 
-    // Edhe qishtu po bojka
-    // if(phoneWindow.matches){
-    //     notificationBar.style.display = "none";
-    //     window.location.href = 'notification.html';
-    // }
-
-    navBar.classList.toggle('transition');
-    for (const element of navMenu) {
-        element.classList.toggle('transition');
-    }
-
-    if (notificationIcon.style.display === "block") {
-        notificationIcon.style.display = "none";
-        notificationIconActive.style.display = "block";
-    }
-    else {
-        notificationIcon.style.display = "block";
-        notificationIconActive.style.display = "none";
-    }
-})
-
+        if (notificationIcon.style.display === "block") {
+            notificationIcon.style.display = "none";
+            notificationIconActive.style.display = "block";
+        }
+        else {
+            notificationIcon.style.display = "block";
+            notificationIconActive.style.display = "none";
+        }
+    })
+});
 
 // Modal for Create Post
 const createPostModal = document.querySelector('.create-post');
