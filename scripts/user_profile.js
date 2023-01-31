@@ -49,11 +49,6 @@ async function getData(){
      viewFollowersModal.style.display = "none";
  })
 
- window.onclick = function (event) {
-     if (event.target == viewFollowersModal) {
-         viewFollowersModal.style.display = "none";
-     }
- }
 
 
  const viewFollowingsModal = document.querySelector('.followingsModal');

@@ -27,6 +27,7 @@
     width: 150px;
     height: 150px;
     border-radius: 100%;
+    position: relative;
     background-image: url(../photos/user-profile.png);
     background-size: cover;
     background-position: center;
@@ -129,10 +130,11 @@
 }
 
 #posts {
+    display: flex;
+    justify-content: center;
     font-size: 14px;
-    position: absolute;
-    left: 825px;
-    margin: 0;
+    position: relative;
+    left: 80px;
 }
 
 #posts::before {
@@ -143,6 +145,7 @@
     border-radius: 3px;
     background-color: gray;
     position: relative;
+    left: 78px;
     bottom: 1px;
 }
 
@@ -212,22 +215,27 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #posts {
-        left: 145px;
-    }
-
     #posts::before {
         bottom: 0.5px;
     }
 
+    #posts {
+        left: -45px;
+    }
+
     .feed {
-        width: 133px;
-        height: 133px;
+        width: 130px;
+        height: 130px;
+        margin-top: 25px;
     }
 
     .user-feed {
-        left: 1px;
+        left: 2px;
         gap: 1px;
+    }
+
+    .user-feed > div{
+        justify-items: center;
     }
 
     .user-photo {
@@ -241,6 +249,7 @@
         left: 6px;
         top: 0;
         padding: 10px 0;
+        margin-bottom: 30px;
     }
 
     .ig-footer {
@@ -280,8 +289,188 @@
 
     .username {
         position: relative;
-        gap: 70px;
+        gap: 58px;
+    }
+
+    .user-info {
+        gap: 0;
     }
 }
 
-@media only screen and (max-width: 1200px) {}
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .feed {
+        width: 170px;
+        height: 170px;
+    }
+
+    .user-feed {
+        left: 45px;
+    }
+
+    .profile-line {
+        width: 73%;
+        margin: 0px 0 0 20.5%;
+    }
+    
+    .user-profile {
+        padding: 20px;
+    }
+
+    #posts {
+        left: 0;
+    }
+    
+}
+
+@media only screen and (width: 280px) {
+    .username h4 {
+        font-size: 20px;
+    }
+
+    .username {
+        gap: 30px;
+    }
+
+    .user-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn-followers {
+        font-size: 13px;
+    }
+
+    .followers {
+        gap: 5px;
+        padding-left: 100px;
+    }
+
+    .highlights {
+        right: 60px;
+    }
+
+    .highlights-pic,
+    .add-highlight {
+        width: 60px;
+        height: 60px;
+    }
+
+    .add-highlight span {
+        font-size: 55px;
+    }
+
+    .user-profile {
+        margin-bottom: 25px;
+    }
+
+    .user-info {
+        gap: 0;
+    }
+
+    .feed {
+        width: 94px;
+        height: 94px;
+        margin-top: 35px;
+    }
+
+    .user-feed {
+        left: 3px;
+    }
+
+}
+
+@media only screen and (width: 540px) {
+    .user-profile {
+        left: 0;
+    }
+
+    .username {
+        justify-content: center;
+        gap: 125px;
+    }
+
+    .followers {
+        gap: 45px;
+        padding-left: 170px;
+    }
+
+    .user-photo {
+        left: 25px;
+    }
+
+    .highlights {
+        right: 155px;
+    }
+
+    .feed {
+        width: 170px;
+        height: 170px;
+    }
+
+    .user-feed {
+        left: 0px;
+        gap: 8px;
+    }
+    
+}
+
+@media only screen and (width: 912px) {
+    .feed {
+        width: 225px;
+        height: 225px;
+    }
+
+    .profile-line {
+        width: 84%;
+        margin: 0px 0 0 13.5%;
+    }
+
+    .highlights-pic, .add-highlight {
+        width: 115px;
+        height: 115px;
+    }
+
+    .add-highlight span {
+        font-size: 110px;
+    }
+
+    .user-photo {
+        width: 175px;
+        height: 175px;
+    }
+
+    .followers {
+        gap: 55px;
+    }
+}
+
+@media only screen and (width: 1024px) {
+    .followers {
+        gap: 60px;
+    }
+
+    .profile-line {
+        width: 80%;
+        margin: 0px 0 0 14.5%;
+    }
+    
+    .feed {
+        width: 250px;
+        height: 250px;
+    }
+
+    .highlights {
+        right: 22%;
+    }
+}
+
+@media only screen and (width: 1280px) {
+    .feed {
+        width: 255px;
+        height: 255px;
+    }
+
+    .profile-line {
+        width: 67%;
+    }
+}
