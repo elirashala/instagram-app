@@ -222,7 +222,9 @@ const notificationIconActive = document.querySelector('.notification-icon-active
 function notificationPage(media){
     if(media.matches){
         notificationBar.style.display = "none";
-        window.location.href = 'notification.html';
+        // window.location.href = 'notification.html';
+        window.location.assign("notification.html");
+        console.log("next");
     }
 }
 
@@ -245,11 +247,15 @@ notificationButton.addEventListener('click', function(){
     tabletWindow.addListener(tablet);
     tablet(tabletWindow);
 
-    phoneWindow.addListener(notificationPage);
+    // E aplikon fill
+    // phoneWindow.addListener(notificationPage);
+
+    // Aplikohet kur click
     notificationPage(phoneWindow);
 
     // Edhe qishtu po bojka
     // if(phoneWindow.matches){
+    //     notificationBar.style.display = "none";
     //     window.location.href = 'notification.html';
     // }
 

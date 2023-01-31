@@ -117,6 +117,13 @@
         display: none;
     }
 
+    .notification-phone{
+        display: unset;
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
     .notification.active{
         display: none;
     }

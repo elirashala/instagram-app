@@ -21,7 +21,7 @@
 
  */
 
-const notificationLikesComments = document.getElementById('notification-button');
+// const notificationLikesComments = document.getElementById('notification-button');
 
 let notificationItemAsHtmlString =
     `<div class="notification-content">
@@ -34,7 +34,7 @@ let notificationItemAsHtmlString =
         <img class="notification-action-pic" src="photos/userProfilePics/profilePic2.png" alt="user liked image">
     </div>`;
 
-notificationLikesComments.addEventListener('click', () => {
+// notificationLikesComments.addEventListener('click', () => {
     Promise.all([
         fetch('https://api.npoint.io/584992ba9231bb13e12c'),
         fetch('https://api.npoint.io/18f5f11b0b73872e843d')
@@ -62,4 +62,4 @@ notificationLikesComments.addEventListener('click', () => {
         document.getElementById('notification-comments-content-wrapper').innerHTML = commentsOutput;
 
     }).catch(err => console.error(err));
-});
+// });
