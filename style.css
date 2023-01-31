@@ -1,0 +1,31 @@
+@import "styles/login.css";
+@import "styles/user_profile.css";
+
+:root {
+    --ig-primary-button:0, 149, 246;
+    --ig-primary-button-hover: 24, 119, 242;
+    --ig-secondary-background: 250, 250, 250;
+    --ig-link: 0, 55, 107;
+    --ig-elevated-separator: 219, 219, 219;
+    --ig-tertiary-text: 199, 199, 199;
+    --fds-black-alpha-50: rgba(0, 0, 0, 0.5);
+    --fds-black-alpha-20: rgba(0, 0, 0, 0.2);
+    --main-grey: #343a40;
+    --second-grey: #495057;
+    --lighter-grey: #868e96;
+    --second-light-grey: #adb5bd;
+    --white-color: #fff;
+    --grey-one: #f8f9fa;
+    --grey-two: #f1f3f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+}

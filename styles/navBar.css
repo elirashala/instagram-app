@@ -1,29 +1,70 @@
 .nav-bar{
     background-color: white;
-    width: 16%;
+    width: 250px;
     height: 100vh;
     padding: 35px 20px;
     position: fixed;
-    top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 1px solid rgb(226, 226, 226);
+    border-right: 1px solid rgb(var(--ig-elevated-separator));
+    z-index: 10;
+	transition: 0.5s;
+    box-shadow: 0px 0px 5px rgb(var(--ig-elevated-separator));
 }
 
-.ig-logo{
-    padding: 12px;
+.nav-bar.transition{
+    background-color: white;
+    width: 97px;
+    height: 100vh;
+    padding: 35px 20px;
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgb(var(--ig-elevated-separator));
+    transition: 0.5s;
 }
+
+.nav-logo{
+    position: relative;
+    height: 11%;
+    padding: 12px !important;
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    /* align-content: center; */
+}
+
+.insta-logo1{
+    animation: changeLogo1 500ms ;
+}
+
+@keyframes changeLogo1 {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+} 
+
+.insta-logo2{
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    transition: 1s;
+    animation: changeLogo2 500ms ;
+}
+
+@keyframes changeLogo2 {
+    0% {opacity: 0%; bottom: 0; width: 0%;}
+    100% {opacity: 100%; top: 0; width: 100%;}
+} 
 
 .nav-bar ul{
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.ig-logo img{
-    width: 65%;
 }
 
 .nav-menu{
@@ -47,7 +88,7 @@
 }
 
 .nav-menu li:hover{
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(var(--ig-secondary-background));
 }
 
 .nav-menu li p{
@@ -55,12 +96,38 @@
     margin-left: 10px;
 }
 
+.menu.transition{
+    display: none;
+}
+
+#menu-icon{
+    transition: transform 0.7s;
+}
+
+#more-icon{
+    transition: transform 0.7s;
+}
+
+#menuActive{
+    transition: transform 0.7s;
+}
+
+#moreActive{
+    transition: transform 0.7s;
+}
 
 .profile{
     width: 32px;
     height: 32px;
     border-radius: 100%;
     border: 1px solid black ;
+}
+
+.profileOne{
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: 1px solid gray ;
 }
 
 .more-menu{
@@ -85,41 +152,192 @@
 }
 
 .more-menu li:hover{
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(var(--ig-secondary-background));
 }
 
-
-
-/* .dropup{
+.dropup{
     height: auto;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgb(226, 226, 226);
-    display: none;
+    box-shadow: 0px 0px 5px rgb(var(--ig-elevated-separator));
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-content: flex-start;
     position: absolute;
     bottom: 100px;
     z-index: 1;
+    animation: dropUp 300ms ease-in-out forwards;
+}
+
+@keyframes dropUp {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
 }
 
 .dropup li{
     width: 225px;
     font-size: 20px;
     padding: 12px;
-    border-bottom: 1px solid rgb(226, 226, 226);
+    border-bottom: 1px solid rgb(var(--ig-elevated-separator));
     cursor: pointer;
 }
 
 .dropup li:hover{
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(var(--ig-secondary-background));
 }
 
 .dropup li:nth-child(1){
-    border-bottom: none;    
+    border-bottom: none;
 }
 
-.dropup.active{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-content: flex-start;
-}  */
+
+@media only screen and (max-width: 1200px) {
+    .nav-bar{
+        background-color: white;
+        width: 97px;
+        height: 100vh;
+        padding: 35px 20px;
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1px solid rgb(var(--ig-elevated-separator));
+    }
+
+    .nav-menu p{
+        display: none;
+    }
+
+    .nav-menu{
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-content: center;
+        align-items: center;
+    }
+
+    .nav-menu li{
+        padding: 12px;
+        background-color: white;
+        margin: 5px 0px;
+        border-radius: 100%;
+        border: 0px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .more-menu p{
+        display: none;
+    }
+
+    .more-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-content: center;
+        align-items: center;
+
+    }
+
+    .more-menu li{
+        padding: 12px;
+        background-color: white;
+        margin: 5px 0px;
+        border-radius: 100%;
+        border: 0px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .dropup{
+        height: auto;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgb(var(--ig-elevated-separator));
+
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-content: flex-start;
+        position: absolute;
+        bottom: 100px;
+        z-index: 1;
+        animation: dropUp 300ms ease-in-out forwards;
+    }
+
+    .dropup li{
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-bar{
+        background-color: white;
+        width: 100%;
+        height: 70px;
+        /* padding: 20px 0px; */
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border-top: 1px solid rgb(var(--ig-elevated-separator));
+    }
+
+    .nav-logo{
+        display: none;
+    }
+
+    .ig-logo{
+        display: none;
+    }
+
+    .more-menu{
+        display: none;
+    }
+
+    .nav-menu{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    /* .nav-menu li:nth-child(1){
+        order: 1;
+    } */
+
+    /* .nav-menu li:nth-child(2){
+        order: 2;
+    } */
+
+    .nav-menu li:nth-child(3){
+        display: none;
+    }
+
+    .nav-menu li:nth-child(4){
+        order: 4;
+    }
+
+    .nav-menu li:nth-child(5){
+        order: 3;
+    }
+    .nav-menu li:nth-child(6){
+        order: 5;
+    }
+
+}

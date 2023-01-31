@@ -1,0 +1,131 @@
+.notification{
+    /* display: none; */
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: -210px;
+    top: 0;
+    z-index: 8;
+    margin: 0;
+    padding: 12px 0px;
+    transition: 0.5s;
+    background-color: var(--white-color);
+    /* border-radius: 0 20px 20px 0; */
+}
+
+.notification.active{
+    /* display: block; */
+    width: 350px;
+    height: 100vh;
+    position: fixed;
+    left: 97px;
+    top: 0;
+    transition: 0.5s;
+    z-index: 9;
+    margin: 0;
+    border-radius: 0 20px 20px 0;
+    border-right: 1px solid rgb(var(--ig-elevated-separator));
+    box-shadow: 0px 0px 5px rgb(var(--ig-elevated-separator));
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#notification-button.active{
+    border: 1px solid rgb(220, 220, 220);
+}
+
+.notification-content1{
+    width: 100%;
+    height: 10%;
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.notification-content1 h2{
+    margin: 0;
+    font-weight: 500;
+}
+
+.notification-content1 h3{
+    margin: 0;
+    font-weight: 500;
+}
+
+.notification-content {
+    padding: 13px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.notification-content:hover {
+    background-color: var(--grey-one);
+}
+
+.notification-content:active {
+    background-color: var(--grey-two);
+}
+
+.user-notifications-details-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.notification-username {
+    font-weight: 600;
+    color: var(--main-grey);
+}
+
+.notification-action-done {
+    color: var(--main-grey);
+}
+
+.notification-time{
+    color: var(--lighter-grey);
+}
+
+.notification-users-pic, .notification-action-pic {
+    width: 14%;
+}
+
+.notification-users-pic {
+    border-radius: 100%;
+    border: 0.8px solid var(--lighter-grey);
+}
+
+.notification-action-pic {
+    margin-left: auto
+}
+
+@media only screen and (max-width: 1200px) {
+    .notification{
+        left: -155px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .notification{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        left: 0;
+        position: unset;
+    }
+
+    .notification.active{
+        display: none;
+    }
+
+    #notification-button.active{
+        border: none;
+    }
+}

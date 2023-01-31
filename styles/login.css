@@ -1,19 +1,19 @@
-* {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;;
-}
+
 body {
     background-color: #fafafa;
     height: 100vh;
     margin: 0px;
 }
+
 .flex-2 {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    height: 90%;
+}
+.right {
+    margin-top: -70px;
 }
 .left {
     background-image: url(https://static.cdninstagram.com/rsrc.php/v3/y4/r/ItTndlZM2n2.png);
@@ -21,12 +21,54 @@ body {
     background-repeat: no-repeat;
     width: 465px;
     height: 635px;
+    transform: scale(1.2);
+    margin-right: 40px;
 }
 .left img {
-    position: relative;
+    position: absolute;
     top: 28px;
     left: 155px;
+    transition: opacity 4s ease-in-out;
 }
+@keyframes imagesFading {
+    0% {
+        opacity:1;
+    }
+    17% {
+        opacity:1;
+    }
+    25% {
+        opacity:0;
+    }
+    92% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.left img{
+    animation-name: imagesFading;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction:normal;
+}
+
+.left img:nth-of-type(1) {
+    animation-delay: 12s;
+}
+.left img:nth-of-type(2) {
+    animation-delay: 8s;
+}
+.left img:nth-of-type(3) {
+    animation-delay: 4s;
+}
+.left img:nth-of-type(4) {
+    animation-delay: 0s;
+}
+
+
 .right-1 {
     display: flex;
     flex-direction: column;
@@ -43,23 +85,40 @@ body {
 }
 
 .log-in {
-    background-color: rgb(77, 181, 249);
+    background-color: rgb(0, 149, 246);
+    font-size: 16px;
+    border: none;
     text-align: center;
+    cursor: pointer;
     color: white;
     border-radius: 10px;
     margin-top: 10px;
     padding: 10px;
 }
+.log-in:hover {
+    background-color: rgb(24, 119, 242);
+}
 input {
     all: unset;
+    width: 100%;
+}
+
+.divInp{
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
     border: 1px solid rgb(219,219,219);
     margin-top: 10px;
     background-color: rgb(250,250,250);
 }
-input:focus,
-input:active {
-    border: 1px solid rgba(38, 38, 38, 0.4);
+#showBtn {
+    all: unset;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(38, 38, 38);
+}
+#showBtn:hover {
+    opacity: 0.5;
 }
 
 .or-style {
@@ -112,4 +171,54 @@ input:active {
 .sign-up span {
     color: rgba(0, 149, 246, 1);
     font-weight: 600;
+}
+.get-app {
+    text-align: center;
+}
+.app-stores {
+    text-align: center;
+    margin-top: 20px;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+.navbar span{
+    color: gray;
+    padding: 10px;
+    cursor: pointer;
+}
+footer p{
+    color: gray;
+    text-align: center;
+}
+
+@media only screen and (max-width: 975px) {
+    .left {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .right-1, .sign-up {
+        background: transparent;
+        border: none;
+        max-width: 300px;
+    }
+    footer div, footer p {
+        font-size: 80%;
+    }
+}
+
+@media  (max-height: 900px) {
+    .left {
+        transform: scale(1);
+    }
+    .right {
+        transform: scale(0.9);
+    }
 }
