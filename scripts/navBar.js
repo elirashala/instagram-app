@@ -66,7 +66,7 @@ menuButtons.forEach(button => {
         profileIconActive.style.display = "none";
         profileText.style.fontWeight = "normal";
 
-        // Return to defaulr More Menu
+        // Return to default More Menu
         dropUpItems.style.display = 'none';
         moreMenuIcon.style.display = "block";
         moreIconActive.style.display = "none";
@@ -83,6 +83,7 @@ menuButtons.forEach(button => {
         changeIcon(tabletWindow);
         // Add the active class to the clicked button
         this.classList.add('active');
+        console.log('active');
         }
     });
 
@@ -114,6 +115,8 @@ for(let i = 0; i < menuButtons.length; i++){
         }
     }
 }
+
+
 
 // Logo Display for Tablet Media Query
 function tablet(media){
@@ -193,7 +196,7 @@ clearInput.addEventListener('click', () => {
     // console.log('clear');
     searchInput.value = '';
     clearInput.style.display = "none";
-    searchIconInput.style.display = "block";
+    // searchIconInput.style.display = "block"; kur klikohet bon bug
 })
 
 
@@ -239,18 +242,11 @@ notificationButtons.forEach(notificationButton => {
             instaLogo2.style.display = "none";
         }
 
-        phoneWindow.addListener(notificationPage);
+        //phoneWindow.addListener(notificationPage);
         notificationPage(phoneWindow);
 
         // tabletWindow.addListener(tablet);
         // tablet(tabletWindow);
-        //
-
-        // Edhe qishtu po bojka
-        // if(phoneWindow.matches){
-        //     window.location.href = 'notification.html';
-        //     notificationBar.style.display = "block";
-        // }
 
         navBar.classList.toggle('transition');
         for (const element of navMenu) {
