@@ -12,6 +12,7 @@
     z-index: 10;
 	transition: 0.5s;
     box-shadow: 0px 0px 5px rgb(var(--ig-elevated-separator));
+    z-index: 10;
 }
 
 .nav-bar.transition{
@@ -26,6 +27,14 @@
     justify-content: space-between;
     border-right: 1px solid rgb(var(--ig-elevated-separator));
     transition: 0.5s;
+}
+
+.nav-bg-color{
+    background-color: rgb(var(--ig-secondary-background));;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
 }
 
 .nav-logo{
@@ -212,6 +221,10 @@
         border-right: 1px solid rgb(var(--ig-elevated-separator));
     }
 
+    .nav-bg-color{
+        width: 97px;
+    }
+
     .nav-menu p{
         display: none;
     }
@@ -312,6 +325,10 @@
         justify-content: center;
         border-top: 1px solid rgb(var(--ig-elevated-separator));
     
+    }
+
+    .nav-bg-color{
+        display: none;
     }
 
     .nav-logo{

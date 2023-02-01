@@ -1,3 +1,9 @@
+const story = document.querySelector('.story');
+
+story.addEventListener('click', () => {
+    fullStory.style.display = "flex";
+})
+
 // Move Right with the right arrow button
 const rightArrowButton = document.querySelector('.move-right .arrow-button');
 rightArrowButton.addEventListener('click', scrollRight);
@@ -22,3 +28,12 @@ function scrollLeft() {
         behavior: 'smooth'
     });
 }
+
+
+// Viewable 
+const fullStory = document.querySelector('.view-story');
+const closeStoriesBtn = document.querySelector('.view-story-close');
+
+closeStoriesBtn.addEventListener('click', () => {
+    fullStory.style.display = "none";
+})

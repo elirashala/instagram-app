@@ -64,7 +64,8 @@
 }
 
 .search-form input{
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    width: 75%;
     border: none;
     background-color: rgba(240, 240, 240);
     font-size:medium;
