@@ -114,11 +114,7 @@
 
 @media only screen and (max-width: 600px) {
     .notification{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        left: 0;
-        position: unset;
+        display: none;
     }
 
     .notification-phone{
@@ -129,7 +125,11 @@
     }
 
     .notification.active{
-        display: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        left: 0;
+        position: unset;
     }
 
     #notification-button.active{

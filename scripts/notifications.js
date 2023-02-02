@@ -37,7 +37,7 @@ const notificationTemplate = (username, action, imgId) =>
     <img class="notification-action-pic" src="photos/userProfilePics/profilePic2.png" alt="user liked image">
   </div>`;
 
-notifBtnEls.forEach(notifBtnEl => {
+ notifBtnEls.forEach(notifBtnEl => {
     notifBtnEl.addEventListener('click', async () => {
         console.log("clicked");
         try {
@@ -70,5 +70,5 @@ notifBtnEls.forEach(notifBtnEl => {
         } catch (err) {
             console.error(err);
         }
-    });
+    })
 });
