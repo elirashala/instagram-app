@@ -213,19 +213,11 @@ exploreButton.addEventListener('click', function(){
 })
 
 // Notification
-// const notificationButton = document.querySelector('#notification-button');
-const notificationButtons = document.querySelectorAll('.notification-button');
+const notificationButton = document.querySelector('#notification-button');
 const notificationBar = document.querySelector('.notification');
 const notificationIcon = document.querySelector('.notification-icon');
 const notificationIconActive = document.querySelector('.notification-icon-active');
 
-function notificationPage(media) {
-    if (media.matches && notificationBar.active) {
-        window.location.href = "notification.html";
-    }
-}
-
-notificationButtons.forEach(notificationButton => {
     notificationButton.addEventListener('click', function(){
         // this.classList.toggle('active');
         if(this.classList.contains('active')){
@@ -242,11 +234,8 @@ notificationButtons.forEach(notificationButton => {
             instaLogo2.style.display = "none";
         }
 
-        //phoneWindow.addListener(notificationPage);
-        notificationPage(phoneWindow);
-
-        // tabletWindow.addListener(tablet);
-        // tablet(tabletWindow);
+        tabletWindow.addListener(tablet);
+        tablet(tabletWindow);
 
         navBar.classList.toggle('transition');
         for (const element of navMenu) {
@@ -261,8 +250,12 @@ notificationButtons.forEach(notificationButton => {
             notificationIcon.style.display = "block";
             notificationIconActive.style.display = "none";
         }
-    })
-});
+
+        const md = new MobileDetect(window.navigator.userAgent);
+        if (md.mobile()) {
+            window.location.href = "notification.html";
+        }
+    });
 
 // Modal for Create Post
 const createPostModal = document.querySelector('.create-post');
