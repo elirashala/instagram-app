@@ -164,12 +164,7 @@
                 </div>
 
                 <div class="story-content">
-                    <div class="story">
-                        <div class="story-img">
-                            <img src="photos/feed1.jpg" alt="" />
-                        </div>
-                        <p>trim</p>
-                    </div>
+                    
                 </div>
 
                 <div class="view-story">
@@ -192,7 +187,7 @@
 
                     <div class="view-story-content">
                         <div class="story-move-left">
-                            <button data-direction="Left" id="left-arrow" class="arrow-button">
+                            <button data-direction="Left" id="left-slide-story" class="arrow-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="2 2 20 20"
                                     style="fill: var(--white-color); box-shadow: rgb(0 0 0 / 15%) 0px 0px 10px; border-radius: 100%">
                                     <path
@@ -203,7 +198,7 @@
                         </div>
                         
                         <div class="story-move-right">
-                            <button data-direction="Right" id="right-arrow" class="arrow-button">
+                            <button data-direction="Right" id="right-slide-story" class="arrow-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="2 2 20 20"
                                     style="fill: var(--white-color); box-shadow: rgb(0 0 0 / 15%) 0px 0px 10px; border-radius: 100%">
                                     <path
@@ -214,13 +209,15 @@
                         </div>
 
                         <div class="view-story-img">
+                            <div class="stories-images" id="stories-images">
+                                
+                            </div>
                             <div class="story-user">
                                 <div class="story-user-pfp">
-                                    <img src="" alt="">
+                                    <img id="story-img" src="" alt="">
                                 </div>
-                                <p>Trim</p>
+                                <p id="story-username"></p>
                             </div>
-                            <img src="photos/feed1.jpg" alt="">
                         </div>
                     </div>
                 </div>
