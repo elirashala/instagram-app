@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid rgb(var(--ig-elevated-separator));
-    z-index: 10;
 	transition: 0.5s;
     box-shadow: 0px 0px 5px rgb(var(--ig-elevated-separator));
     z-index: 10;
@@ -54,7 +53,7 @@
 @keyframes changeLogo1 {
     0% {opacity: 0%;}
     100% {opacity: 100%;}
-} 
+}
 
 .insta-logo2{
     left: 0;
@@ -68,7 +67,7 @@
 @keyframes changeLogo2 {
     0% {opacity: 0%; bottom: 0; width: 0%;}
     100% {opacity: 100%; top: 0; width: 100%;}
-} 
+}
 
 .nav-bar ul{
     list-style: none;
@@ -103,6 +102,13 @@
 .nav-menu li p{
     margin: 0;
     margin-left: 10px;
+}
+
+.menu-button a:link, .menu-button a:visited {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .menu.transition{
@@ -324,7 +330,7 @@
         align-content: center;
         justify-content: center;
         border-top: 1px solid rgb(var(--ig-elevated-separator));
-    
+
     }
 
     .nav-bg-color{

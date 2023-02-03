@@ -39,7 +39,6 @@ const notificationTemplate = (username, action, imgId) =>
 
  notifBtnEls.forEach(notifBtnEl => {
     notifBtnEl.addEventListener('click', async () => {
-        console.log("clicked");
         try {
             const [likesResponse, commentsResponse] = await Promise.all([
                 fetch('https://api.npoint.io/584992ba9231bb13e12c'),
