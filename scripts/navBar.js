@@ -2,9 +2,7 @@
 const instaLogo1 = document.querySelector('.insta-logo1')
 const instaLogo2 = document.querySelector('.insta-logo2')
 
-
 const tabletWindow = window.matchMedia('(max-width: 1200px)');
-const phoneWindow = window.matchMedia('(max-width: 600px)');
 
 function changeIcon(mediaQueryList){
     if(mediaQueryList.matches){
@@ -83,7 +81,6 @@ menuButtons.forEach(button => {
         changeIcon(tabletWindow);
         // Add the active class to the clicked button
         this.classList.add('active');
-        console.log('active');
         }
     });
 
@@ -94,29 +91,23 @@ for(let i = 0; i < menuButtons.length; i++){
     // Zoom In While Hover
     menuButtons[i].onmouseover = function(){
         for (let j = 0; j < icons.length; j++) {
-            console.log("hover");
             icons[i].style.transform = "scale(1.15)";
         }
-        for (let k = 0; k < iconsActive.length; k++) {
-            console.log("hover");
-            iconsActive[i].style.transform = "scale(1.15)";
-        }
+        // for (let k = 0; k < iconsActive.length; k++) {
+        //     iconsActive[i].style.transform = "scale(1.15)";
+        // }
     }
 
     // Zoom Out While Leaving Hover
     menuButtons[i].onmouseleave = function(){
         for (let j = 0; j < icons.length; j++) {
-            console.log("hover out");
             icons[i].style.transform = "scale(1)";
         }
-        for (let k = 0; k < iconsActive.length; k++) {
-            console.log("hover out");
-            iconsActive[i].style.transform = "scale(1)";
-        }
+        // for (let k = 0; k < iconsActive.length; k++) {
+        //     iconsActive[i].style.transform = "scale(1)";
+        // }
     }
 }
-
-
 
 // Logo Display for Tablet Media Query
 function tablet(media){
@@ -137,7 +128,6 @@ homeButton.addEventListener('click', function(){
         homeIconActive.style.display = "block";
         homeText.style.fontWeight = "bold";
 })
-
 
 // Search
 const searchButton = document.querySelector('#search-button');
@@ -198,7 +188,6 @@ clearInput.addEventListener('click', () => {
     clearInput.style.display = "none";
     // searchIconInput.style.display = "block"; kur klikohet bon bug
 })
-
 
 // Explore
 const exploreButton = document.querySelector('#explore-button');
@@ -328,129 +317,15 @@ dropUp.addEventListener('click', () => {
     }
 });
 
-// const toggleButton = document.getElementById("mode-toggle");
-// const content = document.getElementById("content");
-// const navbarBg = document.querySelector('.nav-bar');
-// const dropupBg = document.querySelector('.dropup');
-// const storyContainerBg = document.querySelector('.stories-container');
-// const storyBg = document.querySelector('.story-content');
-// const postBg = document.querySelector('.posts-content');
-// const links = document.querySelectorAll('a');
-// const searchBg = document.querySelector('.search');
-// const notificationBg = document.querySelector('.notification');
-// const svgIcons = document.querySelectorAll('#menu-icon');
-// const moreIconC = document.querySelector('#more-icon');
-// const pathMore = moreIconC.querySelectorAll('path');
-// const moreIconActiveC  = document.querySelector('#moreActive');
-// const pathMoreActive = moreIconActiveC.querySelectorAll('path');
-// const instaIcon = document.querySelector('#insta-icon');
-// const pathInstaIcon = instaIcon.querySelectorAll('path');
-// const instaIconTwo = document.querySelector('#insta-icon-two');
-// const pathInstaIconTwo = instaIconTwo.querySelectorAll('path');
-// const elementsHover = document.querySelectorAll('.menu-button');
-// const menuButtonBg = document.querySelector('.menu-button');
-//
-// toggleButton.addEventListener("click", function() {
-//     content.classList.toggle("dark-mode");
-//     if (content.classList.contains("dark-mode")) {
-//         localStorage.setItem("mode", "dark");
-//         navbarBg.style.backgroundColor = '#0f0f0f';
-//         dropupBg.style.backgroundColor = '#0f0f0f';
-//         storyContainerBg.style.backgroundColor = '#0f0f0f';
-//         storyBg.style.backgroundColor = '#0f0f0f';
-//         postBg.style.backgroundColor = '#0f0f0f';
-//         searchBg.style.backgroundColor = '#0f0f0f';
-//         notificationBg.style.backgroundColor = '#0f0f0f';
-//         links.forEach(link => {
-//             link.style.color = '#ffffff';
-//         });
-//         svgIcons.forEach(svgIcon => {
-//             const pathElements = svgIcon.querySelectorAll('path');
-//
-//             pathElements.forEach(pathElement => {
-//                 pathElement.style.fill = '#ffffff';
-//             });
-//         });
-//         pathMore.forEach(pathElement => {
-//             pathElement.style.fill = '#ffffff';
-//         });
-//         pathMoreActive.forEach(pathElement => {
-//             pathElement.style.fill = '#ffffff';
-//         });
-//         pathInstaIcon.forEach(pathElement => {
-//             pathElement.style.fill = '#ffffff';
-//         });
-//         pathInstaIconTwo.forEach(pathElement => {
-//             pathElement.style.fill = '#ffffff';
-//         });
-//         menuButtonBg.style.backgroundColor = '#0f0f0f';
-//         elementsHover.forEach(element => {
-//             element.addEventListener('mouseover', function() {
-//                 this.style.backgroundColor = '#343a40';
-//             });
-//             element.addEventListener('mouseout', function() {
-//                 this.style.backgroundColor = '#0f0f0f';
-//             });
-//         });
-//     } else {
-//         localStorage.setItem("mode", "light");
-//         navbarBg.style.backgroundColor = '#ffffff';
-//         dropupBg.style.backgroundColor = '#ffffff';
-//         storyContainerBg.style.backgroundColor = '#ffffff';
-//         storyBg.style.backgroundColor = '#ffffff';
-//         postBg.style.backgroundColor = '#ffffff';
-//         searchBg.style.backgroundColor = '#ffffff';
-//         notificationBg.style.backgroundColor = '#ffffff';
-//         links.forEach(link => {
-//             link.style.color = '#0f0f0f';
-//         });
-//         svgIcons.forEach(svgIcon => {
-//             const pathElements = svgIcon.querySelectorAll('path');
-//
-//             pathElements.forEach(pathElement => {
-//                 pathElement.style.fill = '#0f0f0f';
-//             });
-//         });
-//         pathMore.forEach(pathElement => {
-//             pathElement.style.fill = '#0f0f0f';
-//         });
-//         pathMoreActive.forEach(pathElement => {
-//             pathElement.style.fill = '#0f0f0f';
-//         });
-//         pathInstaIcon.forEach(pathElement => {
-//             pathElement.style.fill = '#0f0f0f';
-//         });
-//         pathInstaIconTwo.forEach(pathElement => {
-//             pathElement.style.fill = '#0f0f0f';
-//         });
-//         menuButtonBg.style.backgroundColor = '#ffffff';
-//         elementsHover.forEach(element => {
-//             element.addEventListener('mouseover', function() {
-//                 this.style.backgroundColor = '#fafafa';
-//             });
-//             element.addEventListener('mouseout', function() {
-//                 this.style.backgroundColor = '#ffffff';
-//             });
-//         });
-//     }
-// });
-//
-// const mode = localStorage.getItem("mode");
-// if (mode === "dark") {
-//     content.classList.add("dark-mode");
-// }
-
 const toggleButton = document.getElementById("mode-toggle");
-const content = document.getElementById("content");
+const content = document.querySelectorAll(".content");
 const selectors = ['.nav-bar', '.dropup', '.stories-container', '.story-content', '.posts-content', '.search', '.notification'];
 const svgIcons = document.querySelectorAll('#menu-icon, #more-icon, #moreActive, #insta-icon, #insta-icon-two');
 const links = document.querySelectorAll('a');
-const elementsHover = document.querySelectorAll('.menu-button');
-const dropupsHover = document.querySelectorAll('.dropup-hover');
+const elementsHover = document.querySelectorAll('.menu-button, .dropup-hover');
 
-toggleButton.addEventListener("click", function() {
-    content.classList.toggle("dark-mode");
-    const isDark = content.classList.contains("dark-mode");
+const setElementsColor = (isDark) => {
+    content.forEach(c => c.classList.toggle("dark-mode"));
     localStorage.setItem("mode", isDark ? "dark" : "light");
     selectors.forEach(s => {
         document.querySelector(s).style.backgroundColor = isDark ? '#0f0f0f' : '#ffffff';
@@ -462,21 +337,19 @@ toggleButton.addEventListener("click", function() {
     links.forEach(link => link.style.color = isDark ? '#ffffff' : '#0f0f0f');
     elementsHover.forEach(element => {
         element.addEventListener('mouseover', function() {
-            this.style.backgroundColor = isDark ? '#343a40' : '#0f0f0f';
+            this.style.backgroundColor = isDark ? '#343a40' : '#fafafa';
         });
         element.addEventListener('mouseout', function() {
             this.style.backgroundColor = isDark ? '#0f0f0f' : '#ffffff';
         });
     });
-    dropupsHover.forEach(element => {
-        element.addEventListener('mouseover', function() {
-            this.style.backgroundColor = isDark ? '#343a40' : '#0f0f0f';
-        });
-        element.addEventListener('mouseout', function() {
-            this.style.backgroundColor = isDark ? '#0f0f0f' : '#ffffff';
-        });
-    });
+};
+
+toggleButton.addEventListener("click", function() {
+    const isDark = content[0].classList.contains("dark-mode");
+    setElementsColor(!isDark);
 });
+
 
 // More Icon
 var moreIcon = document.getElementById("more-icon");
