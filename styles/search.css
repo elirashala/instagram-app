@@ -9,7 +9,7 @@
     margin: 0;
     padding: 12px 0px;
     transition: 0.5s;
-    background-color: white;
+    background-color: var(--white-color);
     /* border-radius: 0 20px 20px 0; */
 }
 

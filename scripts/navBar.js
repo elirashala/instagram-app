@@ -2,9 +2,7 @@
 const instaLogo1 = document.querySelector('.insta-logo1')
 const instaLogo2 = document.querySelector('.insta-logo2')
 
-
 const tabletWindow = window.matchMedia('(max-width: 1200px)');
-const phoneWindow = window.matchMedia('(max-width: 600px)');
 
 function changeIcon(mediaQueryList){
     if(mediaQueryList.matches){
@@ -83,7 +81,6 @@ menuButtons.forEach(button => {
         changeIcon(tabletWindow);
         // Add the active class to the clicked button
         this.classList.add('active');
-        console.log('active');
         }
     });
 
@@ -94,29 +91,23 @@ for(let i = 0; i < menuButtons.length; i++){
     // Zoom In While Hover
     menuButtons[i].onmouseover = function(){
         for (let j = 0; j < icons.length; j++) {
-            console.log("hover");
             icons[i].style.transform = "scale(1.15)";
         }
-        for (let k = 0; k < iconsActive.length; k++) {
-            console.log("hover");
-            iconsActive[i].style.transform = "scale(1.15)";
-        }
+        // for (let k = 0; k < iconsActive.length; k++) {
+        //     iconsActive[i].style.transform = "scale(1.15)";
+        // }
     }
 
     // Zoom Out While Leaving Hover
     menuButtons[i].onmouseleave = function(){
         for (let j = 0; j < icons.length; j++) {
-            console.log("hover out");
             icons[i].style.transform = "scale(1)";
         }
-        for (let k = 0; k < iconsActive.length; k++) {
-            console.log("hover out");
-            iconsActive[i].style.transform = "scale(1)";
-        }
+        // for (let k = 0; k < iconsActive.length; k++) {
+        //     iconsActive[i].style.transform = "scale(1)";
+        // }
     }
 }
-
-
 
 // Logo Display for Tablet Media Query
 function tablet(media){
@@ -137,7 +128,6 @@ homeButton.addEventListener('click', function(){
         homeIconActive.style.display = "block";
         homeText.style.fontWeight = "bold";
 })
-
 
 // Search
 const searchButton = document.querySelector('#search-button');
@@ -198,7 +188,6 @@ clearInput.addEventListener('click', () => {
     clearInput.style.display = "none";
     // searchIconInput.style.display = "block"; kur klikohet bon bug
 })
-
 
 // Explore
 const exploreButton = document.querySelector('#explore-button');
@@ -327,6 +316,40 @@ dropUp.addEventListener('click', () => {
         moreText.style.fontWeight = "normal";
     }
 });
+
+const toggleButton = document.getElementById("mode-toggle");
+const content = document.querySelectorAll(".content");
+const selectors = ['.nav-bar', '.dropup', '.stories-container', '.story-content', '.posts-content', '.search', '.notification'];
+const svgIcons = document.querySelectorAll('#menu-icon, #more-icon, #moreActive, #insta-icon, #insta-icon-two');
+const links = document.querySelectorAll('a');
+const elementsHover = document.querySelectorAll('.menu-button, .dropup-hover');
+
+const setElementsColor = (isDark) => {
+    content.forEach(c => c.classList.toggle("dark-mode"));
+    localStorage.setItem("mode", isDark ? "dark" : "light");
+    selectors.forEach(s => {
+        document.querySelector(s).style.backgroundColor = isDark ? '#0f0f0f' : '#ffffff';
+    });
+    svgIcons.forEach(icon => {
+        const pathElements = icon.querySelectorAll('path');
+        pathElements.forEach(path => path.style.fill = isDark ? '#ffffff' : '#0f0f0f');
+    });
+    links.forEach(link => link.style.color = isDark ? '#ffffff' : '#0f0f0f');
+    elementsHover.forEach(element => {
+        element.addEventListener('mouseover', function() {
+            this.style.backgroundColor = isDark ? '#343a40' : '#fafafa';
+        });
+        element.addEventListener('mouseout', function() {
+            this.style.backgroundColor = isDark ? '#0f0f0f' : '#ffffff';
+        });
+    });
+};
+
+toggleButton.addEventListener("click", function() {
+    const isDark = content[0].classList.contains("dark-mode");
+    setElementsColor(!isDark);
+});
+
 
 // More Icon
 var moreIcon = document.getElementById("more-icon");
