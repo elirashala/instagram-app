@@ -212,7 +212,7 @@
     display: flex;
 }
 
-.stories-images video{
+.stories-images > *{
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -220,7 +220,7 @@
     display: none;
 }
 
-.stories-images video.active{
+.stories-images >*.active{
     display: block;
 }
 

@@ -1,6 +1,6 @@
 const getStories = async () => {
     try{
-        const userStories = await fetch('https://api.npoint.io/5a5075a664b54ae81c25');
+        const userStories = await fetch('https://api.npoint.io/f41b2b97d85ff507b506');
         const userStoriesData = await userStories.json();
 
         return userStoriesData;
@@ -39,20 +39,37 @@ const showStories = (datas) => {
 
         stories.forEach(story => {
             const videoContainer = document.querySelector('.stories-images'); 
-            const videoVersions = story.video_versions[1];
-            const videoUrl = videoVersions.url;
+            const videoVersions = story.video_versions ? story.video_versions[1] : undefined;
+            const imageVersions = story.image_versions2.candidates[0];
+            const videoUrl = videoVersions ? videoVersions.url : undefined;
+            const imageUrl = imageVersions.url;
             // console.log(videoUrl);
 
-            videoContainer.innerHTML += `
+
+            let content = ''
+
+            if(videoUrl){
+            content +=
+                `
                 <video class="video"><source src="${videoUrl}" type="video/mp4"></video>
-            `
+            
+                `
+            }else{
+                content +=
+                `
+               <img src="${imageUrl}" atl="Cant show photo bc of the net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin 200" />
+            
+                `
+            }
+
+            videoContainer.innerHTML += content;
             ;        
            
             var slides = document.querySelector('#stories-images').children;
             var slideLeft = document.querySelector('#left-slide-story');
             var slideRight = document.querySelector('#right-slide-story');
             var totalSlides = stories.length;
-            var index = 0;
+            var index = 0; 
 
             // const videoElements = document.querySelectorAll('.stories-images');
             
@@ -78,23 +95,34 @@ const showStories = (datas) => {
                 fullStory.style.display = "none";
             })
 
-            document.querySelector('.stories-images video:nth-child(1)').classList.add("active");
-            document.querySelector('.stories-images video:nth-child(1)').setAttribute("autoplay", "");
+            document.querySelector('.stories-images >*:nth-child(1)').classList.add("active");
+            if(videoUrl){
+                document.querySelector('.stories-images >*:nth-child(1)').setAttribute("autoplay", "");
+            }
 
-            function next(direction){    
-                const currentActive = document.querySelector('.stories-images video.active');                  
+            function next(direction){   
+                const currentActive = document.querySelector('.stories-images >.active');                  
+
+                currentActive.classList.add("active");
+                
 
                 function enableAutoplay() { 
-                    currentActive.autoplay = true;
-                    currentActive.load();
+                    if(index !== totalSlides){
+                        currentActive.autoplay = true;
+                    }
+
+                    if(currentActive instanceof HTMLMediaElement){
+                        currentActive.load();    
+                    }
                 }                
 
                 if(direction == "next"){
                     index++;
                     
                     if(index==totalSlides){
-                        videoContainer.innerHTML = '';
-                        fullStory.style.display = "none";
+                        index = 0;
+                        //     videoContainer.innerHTML = '';
+                        //     fullStory.style.display = "none";
                     }
                 }else{
                     if(index==0){
@@ -107,15 +135,25 @@ const showStories = (datas) => {
                 for(let i = 0; i < slides.length; i++){
                     slides[i].classList.remove("active");
                     slides[i].autoplay = false;
-                    slides[i].pause();
+                    if(slides instanceof HTMLMediaElement){
+                        slides[i].pause();
+                    }
                 }
 
                 const nextActive = slides[index];
-                nextActive.classList.add("active");
+                if(index !== totalSlides){
+                    nextActive.classList.add("active");
+                }
                 enableAutoplay();
+                // setTimeout(() => {
+                    
+                // }, 10000);
             }
-            
+            // setTimeout(() => {
+            //     next("next");
+            // }, 10000);
         });         
+        
     })
 }
 
