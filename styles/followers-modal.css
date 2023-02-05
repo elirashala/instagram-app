@@ -54,7 +54,7 @@
 .followers-content {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .followers-username p {
@@ -63,8 +63,8 @@
 
 .followers-user-profile {
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
 }
 

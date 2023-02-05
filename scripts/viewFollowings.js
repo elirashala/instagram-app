@@ -16,9 +16,9 @@ const viewFollowingsModal = document.querySelector('.followingsModal');
      }
  }
 
- const userfollowings = document.querySelector('.followingsModal-container');
+ const userFollowings = document.querySelector('.followingsModal-container');
 
-const getfollowings = async () => {
+const getFollowings = async () => {
     try {
         const followingsRes = await fetch("https://api.npoint.io/d215d2f8d900dbb14b3f");
         const followingsData = await followingsRes.json();
@@ -32,7 +32,7 @@ const getfollowings = async () => {
 }
 }
 
-const showfollowings = (data) => {
+const showFollowings = (data) => {
     const followingsData = data.users;
     let followingsList = "";
 
@@ -51,9 +51,9 @@ const showfollowings = (data) => {
              </div>`;
     }
     
-    userfollowings.innerHTML += followingsList;
+    userFollowings.innerHTML += followingsList;
 }
 
-getfollowings().then(res => {
-    showfollowings(res);
+getFollowings().then(res => {
+    showFollowings(res);
 });
