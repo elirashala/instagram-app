@@ -3,6 +3,7 @@
     width: 100px;
     height: 100vh;
     position: fixed;
+    overflow: hidden;
     left: 0;
     top: 0;
     z-index: 8;
@@ -126,7 +127,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .search{
+    /* .search{
         display: none;
     }
 
@@ -136,5 +137,13 @@
 
     #search-button.active{
         border: none;
+    } */
+
+    .search-content{
+        width: 100%;
+    }
+    .search.active{
+        width: 100%;
+        left: 0;
     }
 }
