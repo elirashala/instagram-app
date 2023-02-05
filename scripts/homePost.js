@@ -30,10 +30,25 @@ const getPosts = async () => {
     }
 }
 
-
+const commentsContent = document.querySelector('.comments-content');
+        
 const showPosts = (datas) => {
     const {userInfo, posts} = datas;
     
+    const profilePic = document.querySelector('.profile-pic');
+    const profileUsername = document.querySelector('.username-switchacc > p');
+    
+    const profileImg = document.createElement("img");
+    profileImg.id = "profile-image";
+    profilePic.appendChild(profileImg);
+
+    const profilePicSel = document.getElementById("profile-image");
+
+
+    profilePicSel.src = `${'https://source.unsplash.com/random/200x200?sig=imgId'}`
+    profileUsername.textContent = `${userInfo.user.username}`;
+
+
     for(let i = 0; i <userInfo.user.media_count; i++){
         postFeed.innerHTML +=
         `
@@ -64,7 +79,7 @@ const showPosts = (datas) => {
                 </svg>
                 </div>
                 <div class="post-likes">
-                    <p>${posts.data.user.edge_owner_to_timeline_media.edges[i].node.edge_media_preview_like.count} likes</p>
+                    <p class="postLikes">${posts.data.user.edge_owner_to_timeline_media.edges[i].node.edge_media_preview_like.count} likes</p>
                 </div>
                 <div class="post-dc">
                     <p>${userInfo.user.username} - ${posts.data.user.edge_owner_to_timeline_media.edges[i].node.edge_media_to_caption.edges[0].node.text}</p>
@@ -75,9 +90,8 @@ const showPosts = (datas) => {
             </div>
         </div>
         `; 
-        
-       
 
+        // Like and Unlike a post
         const noLike = document.querySelectorAll('.no-like');
         const likeHeart = document.querySelectorAll('.like-heart');
 
@@ -95,6 +109,130 @@ const showPosts = (datas) => {
             });
         }
 
+        //  Show Comments 
+        const comments = document.querySelectorAll('.postComments');
+        const allComments = document.querySelector('.all-comments');
+        
+        const getComments = async () => {
+            try {
+                const commentsResponse = await fetch('https://api.npoint.io/18f5f11b0b73872e843d');
+                const commentsData = await commentsResponse.json();
+                
+                console.log(commentsData);
+                return commentsData;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        const showComments = (datas) => {
+            const commentss = datas.comments;
+
+            commentss.forEach(comm => {
+                commentsContent.innerHTML += 
+                `
+                <div class="notification-content">
+                    <img class="notification-users-pic" src="https://source.unsplash.com/random/200x200?sig="${comm.user.profile_pic_url}"" alt="user profile pic">
+                    <div class="user-notifications-details-content">
+                    <p class="notification-username">${comm.user.username}</p>
+                    <p class="notification-action-done">${comm.text}</p>
+                    <p class="notification-time">1d</p>
+                    </div>
+                </div>
+                `;
+            })
+        }
+
+        for (let m = 0; m < comments.length; m++){
+            comments[m].addEventListener('click', () => {
+                allComments.style.display = "flex";
+                getComments()
+                    .then(res => {
+                        showComments(res);
+                    })
+            })
+        }
+
+        const commL = document.querySelectorAll('.see-comments');
+        for (let u = 0; u < commL.length; u++){
+            commL[u].addEventListener('click', () => {
+                console.log(commL);
+                allComments.style.display = "flex";
+                getComments()
+                    .then(res => {
+                        showComments(res);
+                    })
+            })
+        }
+
+        // Show Likes
+        const likes = document.querySelectorAll('.postLikes');
+        const likesContent = document.querySelector('.likes-content');
+        const allLikes = document.querySelector('.all-likes');
+        
+        const getLikes = async () => {
+            try {
+                const likesResponse = await fetch('https://api.npoint.io/584992ba9231bb13e12c');
+                const likesData = await likesResponse.json();
+                
+                console.log(likesData);
+                return likesData;
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        const showLikes = (datas) => {
+            const likess = datas.data.shortcode_media.edge_liked_by.edges;
+
+            likess.forEach(like => {
+                likesContent.innerHTML += 
+                `
+                <div class="notification-content">
+                    <img class="notification-users-pic" src="https://source.unsplash.com/random/200x200?sig" alt="user profile pic">
+                    <div class="user-notifications-details-content">
+                    <p class="notification-username">${like.node.username}</p>
+                    </div>
+                </div>
+                `;
+            })
+        }
+
+        for (let m = 0; m < likes.length; m++){
+            likes[m].addEventListener('click', () => {
+                allLikes.style.display = "flex";
+                getLikes()
+                    .then(res => {
+                        showLikes(res);
+                    })
+            })
+        }
+
+
+        // Close Likes and Comments modal
+        const closeComments = document.querySelector('.all-comments-close');   
+        const closeLikes = document.querySelector('.all-likes-close');
+        
+        closeComments.addEventListener('click', () => {
+            allComments.style.display = "none";
+            commentsContent.innerHTML = '';
+        })
+
+        closeLikes.addEventListener('click', () => {
+            allLikes.style.display = "none";
+            likesContent.innerHTML = '';
+        })
+
+        window.onclick = (e) => {
+            if(e.target == allLikes ){
+                allLikes.style.display = "none";
+                likesContent.innerHTML = '';
+            }
+            if(e.target == allComments){
+                allComments.style.display = "none";
+                commentsContent.innerHTML = '';
+            }
+        }
     }
 }
 
@@ -104,6 +242,27 @@ getUserId().then(() => {getPosts()
     });
 });
 
+// Post a comment
+const commentInput = document.querySelector("input[name='comment']"); 
+const commentPost = document.querySelector("input[name='submit-comment']");
+const commentForm = document.querySelector(".comment-form");
+
+commentPost.addEventListener('click', (event) =>{
+    event.preventDefault();
+    const commentValue = commentInput.value;
+    commentsContent.innerHTML += 
+        `
+        <div class="notification-content">
+            <img class="notification-users-pic" src="https://source.unsplash.com/random/200x200" alt="user profile pic">
+            <div class="user-notifications-details-content">
+            <p class="notification-username">Real Madrid</p>
+            <p class="notification-action-done">${commentValue}</p>
+            <p class="notification-time">1d</p>
+            </div>
+        </div>
+        `; 
+    commentForm.reset();
+})
 
 
 //  ===========================

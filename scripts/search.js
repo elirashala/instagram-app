@@ -1,5 +1,5 @@
 const searchTermInput = document.querySelector('input[name="search"]');
-const searchContent = document.querySelector('.search-content');
+// const searchContent = document.querySelector('.search-content');
 
 const createUserOutput = (username, full_name, profile_pic_url) =>
     `<div class="search-user-content">

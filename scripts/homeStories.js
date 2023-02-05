@@ -1,6 +1,6 @@
 const getStories = async () => {
     try{
-        const userStories = await fetch('https://api.npoint.io/f41b2b97d85ff507b506');
+        const userStories = await fetch('https://api.npoint.io/f5d2c58f55fdc2550580');
         const userStoriesData = await userStories.json();
 
         return userStoriesData;
