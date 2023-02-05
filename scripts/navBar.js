@@ -134,14 +134,17 @@ const searchButton = document.querySelector('#search-button');
 const searchBar = document.querySelector('.search');
 const searchIcon = document.querySelector('.search-icon')
 const searchIconActive = document.querySelector('.search-icon-active')
+const searchContent = document.querySelector('.search-content');
 
 searchButton.addEventListener('click', function(){
     // this.classList.toggle('active');
 
     if(this.classList.contains('active')){
         searchBar.classList.toggle('active');
+        searchContent.classList.toggle('active');
     }else{
         searchBar.classList.remove('active');
+        searchContent.classList.remove('active');
     }
     if (instaLogo1.style.display === "block") {
         instaLogo1.style.display = "none";
