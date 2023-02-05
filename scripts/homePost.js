@@ -257,7 +257,7 @@ commentPost.addEventListener('click', (event) =>{
             <div class="user-notifications-details-content">
             <p class="notification-username">Real Madrid</p>
             <p class="notification-action-done">${commentValue}</p>
-            <p class="notification-time">1d</p>
+            <p class="notification-time">now</p>
             </div>
         </div>
         `; 
