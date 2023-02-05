@@ -94,6 +94,132 @@
 }
 
 
+/* View All Comments */
+.all-comments{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--fds-black-alpha-50);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.all-comments-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 50;
+}
+
+.comments-container{
+    width: 400px;
+    height: 500px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.comments-container h2{
+    margin: 0px;
+}
+
+.comments-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    height: 85%;
+}
+
+.comment-form{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+}
+
+.comment-form > input[name="comment"]{
+    width: 80%;
+    height: 37px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+}
+
+.comment-form >input[name="comment"]::placeholder{
+    color: gray;
+}
+
+.comment-form > input[name="submit-comment"]{
+    width: 15%;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(16, 105, 221);
+    border: none;
+    background: transparent;
+}
+
+
+
+/* Liked By */
+
+.all-likes{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--fds-black-alpha-50);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.all-likes-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 50;
+}
+
+.likes-container{
+    width: 400px;
+    height: 500px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.likes-container h2{
+    margin: 0px;
+}
+
+.likes-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+}
+
+
 @media only screen and (max-width: 600px) {
     .posts-content{
         gap: 10px;
