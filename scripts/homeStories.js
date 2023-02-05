@@ -35,8 +35,6 @@ const showStories = (datas) => {
         storyUserName.innerHTML = `${datas.reel.user.username}`;
         let stories = datas.reel.items;
 
-        console.log(stories);
-
         stories.forEach(story => {
             const videoContainer = document.querySelector('.stories-images'); 
             const videoVersions = story.video_versions ? story.video_versions[1] : undefined;

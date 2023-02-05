@@ -6,7 +6,6 @@ const getUserId = async () => {
         const userIdRes = await fetch(`https://api.npoint.io/eb60f75762f2c5389545`);
         const userIdData = await userIdRes.json();
         userId = userIdData.id;
-        console.log(userIdData);
     }catch(error){
         console.error(error);
     }
@@ -20,9 +19,6 @@ const getPosts = async () => {
         const userPosts = `https://api.npoint.io/f95b9648808eedd37ac1?id=${userInfoData.pk}`;
         const postsRes = await fetch(userPosts);
         const postsData = await postsRes.json();
-
-        console.log(userInfoData);
-        console.log(postsData);
 
         return {userInfo: userInfoData, posts: postsData};
     }catch(error){
@@ -117,8 +113,6 @@ const showPosts = (datas) => {
             try {
                 const commentsResponse = await fetch('https://api.npoint.io/18f5f11b0b73872e843d');
                 const commentsData = await commentsResponse.json();
-                
-                console.log(commentsData);
                 return commentsData;
             } catch (err) {
                 console.error(err);
@@ -156,7 +150,6 @@ const showPosts = (datas) => {
         const commL = document.querySelectorAll('.see-comments');
         for (let u = 0; u < commL.length; u++){
             commL[u].addEventListener('click', () => {
-                console.log(commL);
                 allComments.style.display = "flex";
                 getComments()
                     .then(res => {
@@ -174,8 +167,6 @@ const showPosts = (datas) => {
             try {
                 const likesResponse = await fetch('https://api.npoint.io/584992ba9231bb13e12c');
                 const likesData = await likesResponse.json();
-                
-                console.log(likesData);
                 return likesData;
             } catch (err) {
                 console.error(err);
