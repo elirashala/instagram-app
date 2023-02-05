@@ -17,7 +17,7 @@ const showStories = (datas) => {
     `
     <div class="story">
         <div class="story-img">
-            <img src="${datas.reel.user.profile_pic_url}" alt="" />
+            <img src="https://source.unsplash.com/random/200x200?sig=imgId" alt="" />
         </div>
         <p>${datas.reel.user.username}</p>
     </div>
