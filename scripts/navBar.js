@@ -49,11 +49,6 @@ menuButtons.forEach(button => {
         searchIconActive.style.display = "none";
         searchBar.classList.remove('active');
 
-        // Return to default Explore Menu
-        exploreIcon.style.display = "block";
-        exploreIconActive.style.display = "none";
-        exploreText.style.fontWeight = "normal";
-
         // Return to default Notification Menu
         notificationIcon.style.display = "block";
         notificationIconActive.style.display = "none";
@@ -190,18 +185,6 @@ clearInput.addEventListener('click', () => {
     searchInput.value = '';
     clearInput.style.display = "none";
     // searchIconInput.style.display = "block"; kur klikohet bon bug
-})
-
-// Explore
-const exploreButton = document.querySelector('#explore-button');
-const exploreIcon = document.querySelector('.explore-icon');
-const exploreIconActive = document.querySelector('.explore-icon-active');
-const exploreText = document.querySelector('#explore-menu');
-
-exploreButton.addEventListener('click', function(){
-        exploreIcon.style.display = "none";
-        exploreIconActive.style.display = "block";
-        exploreText.style.fontWeight = "bold";
 })
 
 // Notification
