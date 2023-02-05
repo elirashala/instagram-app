@@ -160,6 +160,7 @@ body {
     }
 
     .logo-phone{
+        background-color: var(--white-color);
         display: block;
         width: 100%;
         height: 50px;

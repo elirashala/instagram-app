@@ -3,7 +3,7 @@ let userId;
 
 const getUserId = async () => {
     try {
-        const userIdRes = await fetch(`https://api.npoint.io/ad27d2a267a4669527c8`);
+        const userIdRes = await fetch(`https://api.npoint.io/eb60f75762f2c5389545`);
         const userIdData = await userIdRes.json();
         userId = userIdData.id;
         console.log(userIdData);
@@ -14,10 +14,10 @@ const getUserId = async () => {
 
 const getPosts = async () => {
     try{
-        const userInfoRes = await fetch(`https://api.npoint.io/9547d5a7739c9e283f62?pk=${userId}`);
+        const userInfoRes = await fetch(`https://api.npoint.io/4a66cee8042b74b50f21?pk=${userId}`);
         const userInfoData = await userInfoRes.json();
 
-        const userPosts = `https://api.npoint.io/b743418638800ff41502?id=${userInfoData.pk}`;
+        const userPosts = `https://api.npoint.io/f95b9648808eedd37ac1?id=${userInfoData.pk}`;
         const postsRes = await fetch(userPosts);
         const postsData = await postsRes.json();
 
@@ -64,7 +64,7 @@ const showPosts = (datas) => {
                 </svg>
                 </div>
                 <div class="post-likes">
-                    <p> ${posts.data.user.edge_owner_to_timeline_media.edges[i].node.edge_media_preview_like.count} likes</p>
+                    <p>${posts.data.user.edge_owner_to_timeline_media.edges[i].node.edge_media_preview_like.count} likes</p>
                 </div>
                 <div class="post-dc">
                     <p>${userInfo.user.username} - ${posts.data.user.edge_owner_to_timeline_media.edges[i].node.edge_media_to_caption.edges[0].node.text}</p>
@@ -76,29 +76,22 @@ const showPosts = (datas) => {
         </div>
         `; 
         
-        const postCommentElement = document.querySelectorAll('.postComments');
-
-        for (let j = 0; j < postCommentElement.length; j++) {
-            if(posts.data.user.edge_owner_to_timeline_media.edges[i].node.edge_media_to_comment.count === 0){
-                postCommentElement[i].innerHTML = "";
-                postCommentElement[i].innerHTML = "The comments have been turned off by the creator";
-            }
-        }
+       
 
         const noLike = document.querySelectorAll('.no-like');
         const likeHeart = document.querySelectorAll('.like-heart');
 
-        for (let i = 0; i < noLike.length; i++) {
-            noLike[i].addEventListener('click', () => {
-                noLike[i].style.display = "none";
-                likeHeart[i].style.display = "block";
+        for (let j = 0; j < noLike.length; j++) {
+            noLike[j].addEventListener('click', () => {
+                noLike[j].style.display = "none";
+                likeHeart[j].style.display = "block";
             });
         }
 
-        for (let i = 0; i < likeHeart.length; i++) {
-            likeHeart[i].addEventListener('click', () => {
-                noLike[i].style.display = "block";
-                likeHeart[i].style.display = "none";
+        for (let k = 0; k < likeHeart.length; k++) {
+            likeHeart[k].addEventListener('click', () => {
+                noLike[k].style.display = "block";
+                likeHeart[k].style.display = "none";
             });
         }
 
@@ -111,7 +104,71 @@ getUserId().then(() => {getPosts()
     });
 });
 
-// ${posts[i].images.standard_resolution.url}
-// ${posts[i].likes.count}
-// ${posts[i].caption.text}
-// ${posts[i].comments.count} 
+
+
+//  ===========================
+// const postFeed = document.querySelector('.posts-content');
+// let userId;
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '56691ba022msh25a6f904d5ae5a9p174941jsna95afa4cf55c',
+// 		'X-RapidAPI-Host': 'instagram-scraper-2022.p.rapidapi.com'
+// 	}
+// };
+
+// const getUserId = async () => {
+//     try {
+//         const userIdRes = await fetch('https://instagram-scraper-2022.p.rapidapi.com/ig/user_id/?user=realmadrid', options);
+//         const userIdData = await userIdRes.json();
+//         userId = userIdData.id;
+//         console.log(userIdData);
+//         return userIdData;
+//     }catch(error){
+//         console.error(error);
+//     }
+// }
+
+// async function getUserData(userId) {
+//     // Get a list of user IDs that the user follows
+//     const followingResponse = await fetch(`https://instagram-scraper-2022.p.rapidapi.com/ig/following/?id_user=${userId}`, options);
+//     const following = await followingResponse.json();
+
+//     console.log(following);
+//     const userFollowing = following.users;
+//     console.log(userFollowing);
+
+//     const data = [];
+
+//     const promises = userFollowing.map(async () => {
+//         // for(let i = 0; i < userFollowing.length; i++){
+//             var userIdFollowing = userFollowing[0].pk_id;
+//             console.log(userIdFollowing);
+
+//             // Get the user's information
+//             const infoResponse = await fetch(`https://instagram-scraper-2022.p.rapidapi.com/ig/info/?id_user=${userIdFollowing}`, options);
+//             const info = await infoResponse.json();
+
+//             // Get the user's posts
+//             const postsResponse = await fetch(`https://instagram-scraper-2022.p.rapidapi.com/ig/posts/?id_user=${userIdFollowing}`, options);
+//             const posts = await postsResponse.json();
+
+//             console.log(info);
+//             console.log(posts);
+
+//             data.push({
+//                 userId: userIdFollowing,
+//                 info,
+//                 posts
+//             });
+//         // }
+//     });
+  
+//     await Promise.all(promises);
+//     console.log(data);
+//     return data;
+// }
+
+// getUserId()
+//     .then(() => {getUserData(userId)});

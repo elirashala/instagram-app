@@ -1,7 +1,4 @@
-::-webkit-scrollbar{
-    width: 0px;
-    display: none;
-}
+
 
 .stories-container{
     position: relative;
@@ -61,6 +58,11 @@
     overflow: hidden;
     overflow-x:  scroll;
     border-radius: 7px;
+}
+
+.story-content::-webkit-scrollbar{
+    width: 0px;
+    display: none;
 }
 
 .story{
@@ -162,15 +164,15 @@
     justify-content: center;
 }
 
-.view-story-content :nth-child(1){
+.view-story-content >div:nth-child(1){
     grid-area: a;
 }
 
-.view-story-content :nth-child(2){
+.view-story-content >div:nth-child(2){
     grid-area: c;
 }
 
-.view-story-content :nth-child(3){
+.view-story-content >div:nth-child(3){
     grid-area: b;
 }
 
@@ -235,13 +237,14 @@
         border: none;
         border-bottom:1px solid rgb(var(--ig-elevated-separator));
         width: 100%;
-        height: 125px;
+        height: 130px;
         margin-bottom: 0px;
         border-radius: 0px;
         padding: 15px 0px;
     }
 
     .story-content{
+        background-color: var(--white-color);
         padding: 8px 15px;
     }
 
@@ -252,4 +255,66 @@
     .move-right{
         display: none;
     }
+
+    
+/* Viewable Story */
+
+.view-story{
+    background-color: var(--dark-grey);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.view-story-ig-logo{
+    display: none;
+}
+
+.view-story-close{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.view-story-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-user{
+    border-radius: 0px;
+}
+
+
+.view-story-content >div:nth-child(1){
+    position: absolute;
+    z-index: 50;
+    left: 10px;
+}
+
+.view-story-content >div:nth-child(2){
+    position: absolute;
+    z-index: 50;
+    right: 10px;
+}
+
+.view-story-content >div:nth-child(3){
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
 }

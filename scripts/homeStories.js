@@ -57,7 +57,7 @@ const showStories = (datas) => {
             }else{
                 content +=
                 `
-               <img src="${imageUrl}" atl="Cant show photo bc of the net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin 200" />
+               <img src="${imageUrl}" alt="Cant show photo bc of the net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin 200" />
             
                 `
             }
