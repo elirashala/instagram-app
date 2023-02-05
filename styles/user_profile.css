@@ -9,6 +9,7 @@
 @import "search.css";
 @import "followers-modal.css";
 @import "followings-modal.css";
+@import "view-highlight.css";
 
 
 .user-profile {
@@ -94,6 +95,7 @@
     background-image: url(../photos/user-profile.png);
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
 
 .add-highlight {
