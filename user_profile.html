@@ -220,14 +220,29 @@
 
         <section class="highlights">
             <div class="profile-highlights">
-                <div class="highlights-pic"></div>
+                <button class="highlights-pic" id="view-highlightBtn"></button>
                 <p>Highlights</p>
             </div>
-            <div class="add-highlight">
+            <button class="add-highlight">
             <span class="material-symbols-rounded">
                 add
             </span>
                 <p>New</p>
+        </button>
+
+            <div class="viewHighlight">
+                <span class="viewHighlight-closeBtn fa-solid fa-xmark fa-2xl"></span>
+                <div class="viewHighlight-content">
+                    <div class="viewHighlight-container"></div>
+                </div>
+            </div>
+
+            <div class="addHighlight">
+                <div class="addHighlight-content">
+                    <div class="addHighlight-header">
+                    </div>
+                    <div class="addHighlight-container"></div>
+                </div>
             </div>
         </section>
 
@@ -268,3 +283,4 @@
 <script src="scripts/viewFollowers.js" defer></script>
 <script src="scripts/viewFollowings.js" defer></script>
 <script src="scripts/search.js" defer></script>
+<script src="scripts/highlights.js" defer></script>
